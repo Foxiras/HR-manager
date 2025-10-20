@@ -1,0 +1,45 @@
+:root {
+  /* === Цвета === */
+  --color-bg: rgb(252, 249, 240);           /* молочный фон у body*/
+  --color-bg-section: rgba(252, 247, 235);         /* фон у крупных блоков/секций */
+  --color-small-bg-section: rgba(43, 43, 43, 0.1); /* Фон у мелких блоков */
+  --color-block-header: rgb(199, 165, 171, 0.3); /* Фон у заголовка блоков, мелких */
+  --color-accent: color-mix(in srgb, #d4af37 100%, black 70%);     /* золото / акцент текст */
+  --color-dark: #000000;         /* глубокий чёрный */
+  --color-light: #FFFFFF;        /* белый */
+
+  /* === Шрифты === */
+  --font-main: 'Nunito Sans', sans-serif;     /* основной текст */
+  --font-title: 'Playfair Display', serif;    /* заголовки */
+  --font-alt: 'Inter', sans-serif;            /* тех. подписи / кнопки */
+
+  /* === Размеры шрифтов === */
+  --fs-base: 1rem;             /* основной текст (примерно 16px) */
+  --fs-small: 0.875rem;        /* мелкий текст (примерно 14px) */
+  --fs-large: 1.125rem;        /* чуть крупнее основного (18px) */
+  --fs-title-sm: 1.5rem;       /* подзаголовки (24px) */
+  --fs-title-md: 2rem;         /* крупные заголовки (32px) */
+  --fs-title-lg: 2.5rem;       /* главные секции (40px) */
+  --fs-hero: 3.5rem;           /* главный заголовок на экране */
+
+  /* === Межстрочный интервал === */
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-loose: 1.8;
+
+  /* === Интервалы (отступы) === */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+
+  /* === Радиус скругления === */
+  --radius-sm: 40px;  /* У шапки */
+  --radius-md: 12px;  /* У мелких блоков*/
+  --radius-lg: ;
+
+  /* === Тень === */
+  --shadow-soft: 2px 2px 4px rgba(0, 0, 0, 0.4);  /* Тень у заголовка крупных блоков*/
+  --shadow-strong: 10px 10px 20px rgba(0, 0, 0, 0.5);  /* Тень у мелких блоков */
+}

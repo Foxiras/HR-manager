@@ -1,161 +1,331 @@
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HR — с заботой о Вас</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .bg-pattern {
-      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.15), transparent 40%),
-                  radial-gradient(circle at 80% 30%, rgba(255,255,255,.12), transparent 45%),
-                  radial-gradient(circle at 30% 80%, rgba(255,255,255,.10), transparent 50%);
-    }
-  </style>
+  <!-- Подключаем шрифты отдельным файлом -->
+  <link rel="stylesheet" href="styles/global.css">
+
+  <!-- Подключаем основные стили -->
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/variable.css">
 </head>
-<body class="font-sans text-gray-800">
-  <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center py-3 px-6">
-      <div class="flex items-center space-x-3 mb-3 md:mb-0">
-        <div class="w-10 h-10 border-2 border-black rounded-full flex items-center justify-center text-black font-bold text-lg">HR</div>
-        <div>
-          <div class="text-xl font-bold text-black">HR — с заботой о Вас</div>
-          <p class="text-sm text-gray-600">Ваш надежный партнёр в подборе персонала</p>
+<body>
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="На главную">
+        <div class="logo-circle">HC</div>
+        <div class="brand__text">
+          <span class="brand__title">НС – Капитал талантов</span>
+          <span class="brand__tagline text-standard">Ваш надёжный партнёр в подборе персонала</span>
         </div>
-      </div>
-      <nav class="flex flex-wrap justify-center gap-2 font-medium">
-        <a href="#services" class="px-3 py-1 border border-black rounded-full text-black text-sm hover:bg-black hover:text-white transition whitespace-nowrap">Услуги</a>
-        <a href="#about" class="px-3 py-1 border border-black rounded-full text-black text-sm hover:bg-black hover:text-white transition whitespace-nowrap">О нас</a>
-        <a href="#media" class="px-3 py-1 border border-black rounded-full text-black text-sm hover:bg-black hover:text-white transition whitespace-nowrap">СМИ</a>
-        <a href="#conf" class="px-3 py-1 border border-black rounded-full text-black text-sm hover:bg-black hover:text-white transition whitespace-nowrap">HR CONF: Бизнес - это люди</a>
-        <a href="#course" class="px-3 py-1 border border-black rounded-full text-black text-sm hover:bg-black hover:text-white transition whitespace-nowrap">Курс по подбору персонала</a>
-        <a href="#contacts" class="px-3 py-1 border border-black rounded-full text-black text-sm hover:bg-black hover:text-white transition whitespace-nowrap">Контакты</a>
+      </a>
+      <div class="header_main-menu">
+      <nav class="main-nav" aria-label="Главное меню">
+        <ul id="mainmenu" class="menu">
+          <li class="menu-list"><a href="#about">О нас</a></li>
+          <li class="menu-list"><a href="#services">Услуги</a></li>
+          <li class="menu-list"><a href="#contacts">Контакты</a></li>
+          <li class="menu-list"><a href="#blog">Блог</a></li>
+          <li class="menu-list"><a href="#media">СМИ</a></li>
+        </ul>
       </nav>
-      <div class="flex items-center space-x-3 mt-3 md:mt-0 self-center">
-        <span class="hidden md:inline font-semibold text-black text-sm">+7 (XXX) XXX-XX-XX</span>
-        <a href="#contacts" class="border border-black text-black rounded-full px-4 py-1 text-sm font-semibold hover:bg-black hover:text-white">Оставить заявку</a>
+
+      <div class="header-cta">
+        <a class="header-cta_link" href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a>
+        <button class="button" type="button" onclick="document.querySelector('#request').scrollIntoView({behavior: 'smooth'});">
+  Оставить заявку
+          </button>
+      </div>
       </div>
     </div>
   </header>
 
-  <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-24 text-center relative overflow-hidden">
-    <div class="relative z-10">
-      <h1 class="text-5xl font-bold mb-6">HR — с заботой о Вашей команде</h1>
-      <p class="max-w-2xl mx-auto mb-8 text-lg">Помогаем компаниям строить команды, где сотрудники растут, получают поддержку и работают с максимальной отдачей.</p>
-      <a href="#contacts" class="inline-block bg-white text-blue-700 font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100">Оставить заявку</a>
+  <!-- HERO -->
+  <section class="hero">
+    <img src="/images/Photo_1.jpg" class="hero-logo" alt="Основатель компании" loading="lazy" >
+    <div class="hero-overlay">
+      <h1 class="hero-overlay_title">НС — Ваш <p class="hero-overlay_color-text">главный капитал — это люди</p></h1>
+      <p class="hero-overlay_text ">Мы превращаем талант в ценность для компаний и кандидатов</p>
     </div>
-    <div class="absolute inset-0 bg-pattern opacity-20"></div>
-  </section>
+    <div class="hero-note">
+       <svg class="curve" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M200,0 Q100,100 0,50" stroke="#1d1a16" stroke-width="1" fill="none"/>
+  </svg>
+      <p class="hero-note_text">
+        Human Resource —<br>
+        Human Capital<br>
+        Люди не ресурс, люди<br> — это капитал
+      </p>
+  </div>
+</section>
 
-  <section class="py-20 bg-white" id="advantages">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-700">Почему выбирают нас</h2>
-    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
-      <div class="shadow-lg rounded-2xl hover:shadow-xl transition p-8 text-center text-gray-700">Забота о кандидатах – учитываем интересы, мотивацию и карьерные цели.</div>
-      <div class="shadow-lg rounded-2xl hover:shadow-xl transition p-8 text-center text-gray-700">Индивидуальный подход – подбор под уникальные требования компании.</div>
-      <div class="shadow-lg rounded-2xl hover:shadow-xl transition p-8 text-center text-gray-700">Быстрый подбор – закрываем вакансии быстро без потери качества.</div>
-      <div class="shadow-lg rounded-2xl hover:shadow-xl transition p-8 text-center text-gray-700">Гарантия результата – сопровождаем кандидата до адаптации.</div>
-      <div class="shadow-lg rounded-2xl hover:shadow-xl transition p-8 text-center text-gray-700">Семейные ценности – создаём команды доверия и поддержки.</div>
-      <div class="shadow-lg rounded-2xl hover:shadow-xl transition p-8 text-center text-gray-700">Профессиональная экспертиза – опыт с IT, HoReCa, производством.</div>
-    </div>
-  </section>
+  <!-- SERVICES -->
+   <section id="services" role="region" aria-label="Чем могу быть полезна">>
+    <h2 class="services-containter_title title-block-parametr">Чем могу быть полезна?</h2>
+  <div class="services block_parametr">
+      <p class="services-containter_text">Я закрываю полный цикл HR-процессов — от поиска до удержания.</p>
+        <img src="/images/free-icon-magnifier-3687219 1.png" class="services-photo" alt="Знак поиска" loading="lazy">
+        <h3 class="services-title">Подбор персонала
+        <span class="services-text">Помогаю компаниям находить сотрудников, которые не просто соответствуют требования вакансии, но и гармонично вписываются в корпоративную культуру
+        </span></h3>
+          
+        <h4 class="services-info-title">В услугу входит:</h4>
+        <article class="services-info">
+        <div class="services-info_block">
+          <h5 class="services-info-title">Анализ вакансии</h5>
+          <p class="services-text">Определение потребностей бизнеса, составление профиля должности, размещение вакансии.</p>
+        </div>
 
-  <section class="py-20 bg-blue-50" id="services">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-700">Наши услуги</h2>
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
-      <div class="rounded-2xl shadow-lg hover:shadow-xl transition p-8">
-        <h3 class="font-semibold text-xl mb-3 text-blue-700">Подбор персонала</h3>
-        <p>Закрываем постоянные позиции любого уровня через базы, соцсети и сообщества.</p>
-      </div>
-      <div class="rounded-2xl shadow-lg hover:shadow-xl transition p-8">
-        <h3 class="font-semibold text-xl mb-3 text-blue-700">Массовый подбор</h3>
-        <p>Оперативное закрытие вакансий для ритейла, call-центров и производств.</p>
-      </div>
-      <div class="rounded-2xl shadow-lg hover:shadow-xl transition p-8">
-        <h3 class="font-semibold text-xl mb-3 text-blue-700">Executive search</h3>
-        <p>Конфиденциальный поиск топ-менеджеров и ключевых специалистов.</p>
-      </div>
-      <div class="rounded-2xl shadow-lg hover:shadow-xl transition p-8">
-        <h3 class="font-semibold text-xl mb-3 text-blue-700">Сопровождение кандидатов</h3>
-        <p>Помогаем в адаптации и поддерживаем сотрудника на старте.</p>
-      </div>
-      <div class="rounded-2xl shadow-lg hover:shadow-xl transition p-8">
-        <h3 class="font-semibold text-xl mb-3 text-blue-700">HR-консалтинг</h3>
-        <p>Анализ HR-процессов и стратегия подбора персонала под цели компании.</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="py-20 bg-white" id="cases">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-700">Наши истории успеха</h2>
-    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6">
-      <div class="rounded-2xl shadow-lg hover:shadow-xl transition p-8">
-        <h3 class="font-semibold text-lg mb-2 text-gray-800">Сервис Плюс</h3>
-        <p class="text-gray-600">15 сотрудников call-центра за 3 недели. Эффективность +40%.</p>
-      </div>
-      <div class="rounded-2xl shadow-lg hover:shadow-xl transition p-8">
-        <h3 class="font-semibold text-lg mb-2 text-gray-800">Кулинария Хлеб&Кофе</h3>
-        <p class="text-gray-600">Управляющий и 5 поваров. Рост продаж +25%.</p>
-      </div>
-      <div class="rounded-2xl shadow-lg hover:shadow-xl transition p-8">
-        <h3 class="font-semibold text-lg mb-2 text-gray-800">TechDrive</h3>
-        <p class="text-gray-600">3 разработчика и маркетолог. Проект запущен в срок.</p>
-      </div>
-      <div class="rounded-2xl shadow-lg hover:shadow-xl transition p-8">
-        <h3 class="font-semibold text-lg mb-2 text-gray-800">ЭкоМаркет</h3>
-        <p class="text-gray-600">Подбор кассиров и консультантов. Снижение текучести.</p>
-      </div>
-    </div>
-  </section>
+        
+        <div class="services-info_block">
+          <h5 class="services-info-title">Поиск кандидатов</h5>
+          <p class="services-text">Базы, соцсети, профессиональные сообщества, рекомендации.</p>
+        </div>
+        <div class="services-info_block">
+          <h5 class="services-info-title">Адаптация</h5>
+          <p class="services-text">Программы введения, наставничества, снижение текучести.</p>
+        </div>
 
-  <section class="py-20 bg-blue-50" id="process">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-700">Процесс подбора сотрудников</h2>
-    <ol class="max-w-3xl mx-auto space-y-6 list-decimal list-inside text-gray-700 px-6">
-      <li>Заявка — клиент оставляет заявку или звонит.</li>
-      <li>Анализ вакансии — обсуждаем требования и ценности.</li>
-      <li>Поиск кандидатов — базы, соцсети, сообщества.</li>
-      <li>Первичный отбор — интервью, тесты, рекомендации.</li>
-      <li>Представление кандидатов — подборка лучших.</li>
-      <li>Согласование и предложение — обсуждаем условия.</li>
-      <li>Сопровождение и адаптация — поддержка сотрудника.</li>
-      <li>Отчетность клиенту — процесс и результаты.</li>
-    </ol>
-  </section>
-
-  <section class="py-20 bg-white" id="contacts">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-700">Оставьте заявку — мы подберем сотрудников</h2>
-    <form class="max-w-3xl mx-auto grid gap-6 px-6">
-      <input placeholder="Имя" class="p-4 rounded-lg border border-gray-300" />
-      <input placeholder="Компания" class="p-4 rounded-lg border border-gray-300" />
-      <input placeholder="Должность" class="p-4 rounded-lg border border-gray-300" />
-      <input placeholder="Email / телефон" class="p-4 rounded-lg border border-gray-300" />
-      <textarea placeholder="Комментарий / вакансии" class="p-4 rounded-lg border border-gray-300"></textarea>
-      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full py-3 font-semibold">Отправить</button>
-    </form>
-  </section>
-
-  <footer class="bg-gray-900 text-gray-100 py-12 px-6">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+        
+        <div class="services-info_block">
+          <h5 class="services-info-title">Отбор</h5>  
+           <p class="services-text">Скрининг резюме, телефонные интервью. Собеседования и оценка компетенций с использованием тестов и методик. 
+            Представление лучших кандитатов работодателю с рекомендациями. Сопровождение финального выбора и поддержка на этапе оффера. Оформление и ввод в должность в соответствии с ТК РФ.
+           </p>
+          </div>
+      </article>
       <div>
-        <div class="text-xl font-bold mb-4">HR — с заботой о Вас</div>
-        <p>© 2025 Все права защищены.</p>
+          <h4 class="services-info-title">Результат:</h4>
+          <p class="services-text">Вы получаете сотрудника, который соответствует требованиям бизнеса и мотивирован работать с первых дней.</p>
+        </div>
+    
+  </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-hr">
+      <div class="about-image">
+        <img src="/images/Photo_2.jpg" alt="Портрет HR-специалиста" loading="lazy" class="about-image_image" />
       </div>
-      <div>
-        <p class="font-semibold mb-2">Контакты:</p>
+      <div class="about-text">
+        <p class="about-text_text">HR для меня - это не просто подбор персонала. Это про людей, про их потенциал, мечты и ценности. Я верю, что каждая компания - это в первую очередь её команда.</p>
+        <p class="about-text_text">Сегодня многие работодатели сталкиваются с тем, что сотрудники уходят слишком быстро, не всегда вовлекаются в процесс и теряют мотивацию. Я считаю, что причина кроется в отсутствии внимания к человеческому фактору. Люди хотят работать там, где их уважают, где они могут расти и чувствовать, что их труд имеет ценность.</p>
+        <p class="about-text_text"> Моя задача как HR - помогать компаниям находить именно таких сотрудников и создавать условия, в которых они остаются и развиваются. Я соединяю интересы бизнеса и интересы людей, чтобы выигрывали обе стороны: работодатель получает лояльную и вовлечённую команду, а сотрудник - возможность реализовать себя.</p>
+        <p class="about-text_text"> Для меня HR - это про доверие, честность и заботу. Ведь счастливые сотрудники = успешный бизнес.</p>
+      </div>
+  </section>
+
+  <!-- PROBLEMS -->
+   <h2 class="title-block-parametr">Какие проблемы решаю?</h2>
+  <section class="section_problem">
+    <div class="problems block_parametr">
+  <h3 class="problems_title">Высокая текучесть кадров</h3>
+  <p class="problems_label">Проблема</p>
+  <p class="problems_text">
+    Сотрудники увольняются в первые месяцы работы, компания несёт затраты на поиск и обучение новых людей.
+  </p>
+  <p class="problems_label">Решение</p>
+  <p class="problems_text">
+    Я внедряю программы адаптации и мотивации, которые помогают новичкам быстрее войти в должность,
+    почувствовать поддержку и вовлечённость. Это позволяет удерживать ключевых сотрудников и снижать текучесть.
+  </p>
+  </div>
+
+  <div class="problems block_parametr">
+  <h3 class="problems_title">Долгий поиск подходящих специалистов</h3>
+  <p class="problems_label">Проблема</p>
+  <p class="problems_text">
+    Закрытие вакансии затягивается, а бизнес теряет время и деньги.
+  </p>
+  <p class="problems_label">Решение</p>
+  <p class="problems_text">
+     Использую современные инструменты подбора, активные источники поиска и собственные методики оценки. При этом учитываю не только профессиональные компетенции, но и соответствие корпоративной культуре. В результате вакансии закрываются быстрее и качественнее. 
+  </p>
+  </div>
+
+  <div class="problems block_parametr">
+  <h3 class="problems_title">Недостаток системности в HR-процессах</h3>
+  <p class="problems_label">Проблема</p>
+  <p class="problems_text">
+  Процессы найма, адаптации и оценки хаотичны, что приводит к потерям времени и ошибок в работе.  </p>
+  <p class="problems_label">Решение</p>
+  <p class="problems_text">
+   Выстраиваю HR-процессы “под ключ” - от подбора и оформления до адаптации и развития. Все процессы становятся прозрачными и управляемыми, что позволяет бизнесу планировать ресурсы и прогнозировать результаты.  
+  </p>
+  </div>
+
+  <div class="problems block_parametr">
+  <h3 class="problems_title">Отсутствие обучения и развития персонала</h3>
+  <p class="problems_label">Проблема</p>
+  <p class="problems_text">
+   Сотрудники не развиваются, падает их мотивация, перспективные кадры уходят в другие компании.  </p>
+  <p class="problems_label">Решение</p>
+  <p class="problems_text">
+  Разрабатываю и внедряю индивидуальные планы развития (ИПР), организую тренинги и обучающие программы. Формирую кадровый резерв, чтобы у компании всегда был выбор сильных специалистов для роста и новых задач.
+  </p>
+  </div>
+
+  <div class="problems block_parametr">
+  <h3 class="problems_title">Конфликты в коллективе и слабая корпоративная культура</h3>
+  <p class="problems_label">Проблема</p>
+  <p class="problems_text">
+   Сотрудники работают “каждый сам за себя”, возникают недопонимания и конфликты, падает командный дух.  </p>
+  <p class="problems_label">Решение</p>
+  <p class="problems_text">
+    Налаживаю внутренние коммуникации, внедряю корпоративные мероприятия, тимбилдинги и совместные проекты. В результате формируется здоровая рабочая атмосфера, повышается вовлечённость и эффективность команды.
+    </p>
+  </div> 
+</section>
+
+
+  <!-- FOUNDER -->
+  <!-- <section class="founder">
+    <div class="container founder-inner">
+      <div class="founder-info">
+        <h3>Маргарита К. — основатель</h3>
+        <blockquote>“Мы верим, что люди — не ресурс, а капитал.”</blockquote>
+        <h4>HR-менеджер с 3-летним опытом</h4>
+        <ul>
+          <li>Два высших образования.</li>
+          <li>Сертификат Skillbox (2024).</li>
+          <li>Опыт: подбор, адаптация, обучение.</li>
+        </ul>
+      </div>
+      <div class="founder-photo">
+        <img src="/img/founder-photo.jpg" alt="Фото основателя" />
+      </div>
+    </div>
+  </section> -->
+  <section class="section-founder">
+  <div class="founder-badge">
+    <!-- бейдж -->
+    <div class="founder-badge_badge">
+      <p >Маргарита К. — основатель ..........</p>
+      <p>“Мы верим, что люди - не ресурс, а капитал. Наша задача - раскрывать таланты,
+      превращать потенциал в результат и создавать команды, которые приносят бизнесу
+      устойчивость и развитие”.</p>
+    </div>
+
+    <!-- карточка с заголовком и списком -->
+    <div class="card">
+      <div class="card__title">HR-менеджер с 3-летним опытом и современным подходом</div>
+      <ul class="card__list">
+        <li>Два высших образования: гражданская авиация и юриспруденция.</li>
+        <li>Сертификат Skillbox “HR-менеджер с нуля” (2024).</li>
+        <li>Практический опыт: подбор, адаптация, обучение, удержание и сопровождение персонала.</li>
+        <li>Вне работы: книги, туризм, организация мероприятий — вдохновляют на креативные решения и создание сильной корпоративной культуры.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="founder-grid__right">
+    <img src="/img/founder-photo.jpg" alt="Маргарита с котом" />
+  </div>
+</section>
+
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div><strong>30+</strong><p>Программ адаптации</p></div>
+      <div><strong>15+</strong><p>Тренингов и мероприятий</p></div>
+      <div><strong>50+</strong><p>Закрытых вакансий</p></div>
+      <div><strong>20+</strong><p>Удержано ключевых сотрудников</p></div>
+      <div><strong>70+</strong><p>Исполнителей в 5 компаниях</p></div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="offer">
+    <div class="container">
+      <h2>Что предлагаю</h2>
+      <p>Больше, чем HR — создание человеческого капитала</p>
+
+      <div class="offer-grid">
+        <article>
+          <h3>Персониализированный подход</h3>
+          <p>Нахожу специалистов, подходящих вашей культуре и целям бизнеса.</p>
+        </article>
+        <article>
+          <h3>Экономия времени</h3>
+          <p>Беру подбор и адаптацию на себя, чтобы вы сосредоточились на бизнесе.</p>
+        </article>
+        <article>
+          <h3>Долгосрочный результат</h3>
+          <p>Создаю систему удержания и развития сотрудников.</p>
+        </article>
+        <article>
+          <h3>Гибкость</h3>
+          <p>Работаю как над проектами, так и на постоянной основе.</p>
+        </article>
+        <article>
+          <h3>Прозрачность</h3>
+          <p>Каждый этап подбора сопровождается отчётами и понятной аналитикой.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience">
+    <div class="container experience-inner">
+      <h2>Мой опыт</h2>
+      <p>Мысли, наблюдения и ценности, которыми я живу</p>
+      <div class="experience-grid">
+        <blockquote>“HR — это не про контроль, а про поддержку.”</blockquote>
+        <blockquote>“Настоящий HR — мост между людьми.”</blockquote>
+        <blockquote>“Хороший HR видит потенциал раньше других.”</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="request" class="contact-form">
+    <div class="container">
+      <h2>Оставьте заявку</h2>
+      <p>Заполните форму, и я свяжусь с вами для обсуждения деталей сотрудничества</p>
+      <form action="/send-request" method="post">
+        <input type="text" name="name" placeholder="Ваше имя" required />
+        <input type="text" name="company" placeholder="Название компании" />
+        <input type="text" name="position" placeholder="Ваша должность" />
+        <input type="text" name="contact" placeholder="+7 ___ ___ __ __" required />
+        <textarea name="message" rows="4" placeholder="Кратко опишите запрос"></textarea>
+        <button type="submit">Оставить заявку</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/img/logo-hr.png" alt="Логотип HR" width="50" height="50" />
+        <div>
+          <span>HR — с заботой о Вас</span><br>
+          <small>© 2025 Все права защищены</small>
+        </div>
+      </div>
+
+      <div class="footer-contacts">
+        <p><strong>Контакты:</strong></p>
         <p>Телефон: +7 (XXX) XXX-XX-XX</p>
         <p>Email: info@hrcare.ru</p>
-        <p>Адрес: г. Симферополь, ул. Примерная, 10</p>
+        <p>Адрес: г. Симферополь, ул. Лабутева, 1</p>
       </div>
-      <div>
-        <p class="font-semibold mb-2">Мы в соцсетях:</p>
-        <div class="space-x-4">
-          <a href="#" class="hover:text-blue-400">Instagram</a>
-          <a href="#" class="hover:text-blue-400">LinkedIn</a>
-          <a href="#" class="hover:text-blue-400">Telegram</a>
-        </div>
+
+      <div class="footer-social">
+        <p><strong>Мы в соцсетях:</strong></p>
+        <ul>
+          <li><a href="#">ВКонтакте</a></li>
+          <li><a href="#">Телеграм</a></li>
+        </ul>
       </div>
     </div>
   </footer>
+
 </body>
 </html>

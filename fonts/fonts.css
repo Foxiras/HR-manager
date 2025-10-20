@@ -1,17 +1,57 @@
+/* === Playfair Display === */
 @font-face {
-  font-family: Raleway;
-  src:
-    url(./Raleway-Regular.woff2) format('woff2'),
-    url(./Raleway-Regular.woff) format('woff');
-  font-weight: normal;
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Raleway;
-  src:
-    url(./Raleway-Bold.woff2) format('woff2'),
-    url(./Raleway-Bold.woff) format('woff');
-  font-weight: bold;
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
   font-display: swap;
+}
+
+/* === Nunito Sans === */
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../fonts/NunitoSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../fonts/NunitoSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Inter === */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Резервные (fallback) === */
+:root {
+  --font-title: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-text: 'Nunito Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-ui: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
