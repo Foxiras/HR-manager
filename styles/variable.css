@@ -1,5 +1,7 @@
 :root {
   /* === Цвета === */
+  --color-bg-gold: radial-gradient(120% 70% at 50% 0%, rgba(255,255,255,.35) 0 40%, transparent 60%),
+    linear-gradient(90deg,#a67c00 0%, #d4af37 22%, #f1da7a 45%, #d4af37 70%, #a67c00 100%);   /* Чистое золото*/
   --color-bg: rgb(252, 249, 240);           /* молочный фон у body*/
   --color-bg-section: rgba(252, 247, 235);         /* фон у крупных блоков/секций */
   --color-small-bg-section: rgba(43, 43, 43, 0.1); /* Фон у мелких блоков */
@@ -7,6 +9,7 @@
   --color-accent: color-mix(in srgb, #d4af37 100%, black 70%);     /* золото / акцент текст */
   --color-dark: #000000;         /* глубокий чёрный */
   --color-light: #FFFFFF;        /* белый */
+  --color-active: rgb(112, 110, 105, 0.9);
 
   /* === Шрифты === */
   --font-main: 'Nunito Sans', sans-serif;     /* основной текст */
@@ -38,6 +41,8 @@
   --radius-sm: 40px;  /* У шапки */
   --radius-md: 12px;  /* У мелких блоков*/
   --radius-lg: ;
+  --outline-focus: 1px solid black;
+  --border-radius-focus: 9.375rem;
 
   /* === Тень === */
   --shadow-soft: 2px 2px 4px rgba(0, 0, 0, 0.4);  /* Тень у заголовка крупных блоков*/
