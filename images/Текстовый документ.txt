@@ -1,0 +1,4 @@
+@media (max-width: 1200px) { ... } /* большие ноутбуки */
+@media (max-width: 992px)  { ... } /* планшеты */
+@media (max-width: 768px)  { ... } /* телефоны */
+@media (max-width: 480px)  { ... } /* маленькие телефоны */

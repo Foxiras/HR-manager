@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="logHC.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.5360689"
+     inkscape:cx="221.05367"
+     inkscape:cy="456.09809"
+     inkscape:window-width="1920"
+     inkscape:window-height="1111"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="271.42034"
+       y="172.08609"
+       width="362.36015"
+       height="311.52713"
+       id="rect6" />
+    <rect
+       x="648.9773"
+       y="290.1931"
+       width="253.25944"
+       height="242.70696"
+       id="rect4" />
+    <rect
+       x="225.55918"
+       y="138.50125"
+       width="462.98991"
+       height="342.95549"
+       id="rect3" />
+    <rect
+       x="241.3879"
+       y="492.00922"
+       width="257.21661"
+       height="151.69185"
+       id="rect2" />
+    <rect
+       x="294.15028"
+       y="205.77329"
+       width="135.86313"
+       height="127.94878"
+       id="rect1" />
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     sodipodi:insensitive="true"
+     transform="translate(88.053658)">
+    <circle
+       style="fill:#ac7a23;fill-opacity:1;stroke-width:0.264583"
+       id="path6"
+       cx="99.946342"
+       cy="68.605141"
+       r="38" />
+    <circle
+       style="fill:#000000;stroke-width:0.264583"
+       id="path1"
+       cx="100.35751"
+       cy="69.038719"
+       r="35" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.30814981,0,0,0.40112164,-9.1256911,-45.576535)"
+       id="text6"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;font-family:Aldhabi;-inkscape-font-specification:Aldhabi;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect6);display:inline;fill:#ac7a23;fill-opacity:1"><tspan
+         x="271.41992"
+         y="319.55469"
+         id="tspan2">HC</tspan></text>
+  </g>
+</svg>
