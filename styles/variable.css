@@ -17,10 +17,10 @@
   --font-alt: 'Inter', sans-serif;            /* тех. подписи / кнопки */
 
   /* === Размеры шрифтов === */
-  --fs-base: clamp(1.125rem, 1.3811rem + -0.2732vw, 1.25rem); /* основной текст (clamp от 16 до 20px) */
-  --fs-big-small: clamp(0.75rem, 0.712rem + 0.1739vw, 0.875rem);        /* мелкий текст (12-14px) */
-  --fs-normal: clamp(0.875rem, 0.837rem + 0.1739vw, 1rem);        /* чуть крупнее основного (18px) */
-  --fs-title-sm: 1.5rem;       /* подзаголовки (24px) */
+  --fs-max-small: clamp(0.875rem, 0.837rem + 0.1739vw, 1rem); /* текст 14-16px */
+  --fs-big-small: clamp(1rem, 0.962rem + 0.1739vw, 1.125rem); /* текст (16-18px) */
+  --fs-base: clamp(1.125rem, 1.087rem + 0.1739vw, 1.25rem); /* текст (18-20px) */
+  --fs-title-sm: clamp(1.25rem, 1.1739rem + 0.3478vw, 1.5rem);;       /* подзаголовки (20-24px) */
   --fs-title-md: 2rem;         /* крупные заголовки (32px) */
   --fs-title-lg: 2.5rem;       /* главные секции (40px) */
   --fs-hero: 3.5rem;           /* главный заголовок на экране */

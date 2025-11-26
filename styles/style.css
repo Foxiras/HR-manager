@@ -6,7 +6,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-dark);
   font-family: var(--font-main);
-  font-size: 16px;
+  font-size: var(--fs-big-small);
   line-height: 1.2;
   text-align: left;
   word-spacing: normal;
@@ -229,4 +229,123 @@ html { scroll-behavior: smooth; }
 
 .submenu a {
   border-bottom: 1px solid black;
+}
+
+.hero {
+  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-overlay {
+  order: 1;         
+  text-align: center;
+}
+
+.hero-overlay_title {
+  font-size: var(--fs-title-sm);
+  font-weight: 600;
+  font-family: var(--font-title);
+  line-height: 1.2;
+  margin: 0 0 6px;
+}
+
+.hero-overlay_text-slogan {
+  display: block;
+  font-size: var(--fs-title-sm);
+}
+
+.hero-overlay_text {
+  color: var(--color-accent);
+  font-size: var(--fs-max-small);
+  margin: 0;
+}
+
+.hero-logo {
+  order: 2;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-note {
+  order: 3;
+  margin-top: -60px;         
+  max-width: 70%;
+}
+
+.hero-note_text {
+  font-size: var(--fs-big-small);
+  line-height: 1;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3); 
+  backdrop-filter: blur(4px);           
+}
+
+/* линию убираем */
+
+.curve {
+  display: none;
+}
+
+
+
+
+
+
+
+
+/* Контейнер секции */
+.services {
+  padding: 24px 16px;
+  background: var(--color-bg-section);
+  border-radius: 16px;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.35);
+}
+
+/* Заголовок секции */
+.standard-block-parametr__title {
+  font-family: var(--font-title);
+  font-size: var(--fs-base);
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Подзаголовок — «Подбор персонала», «В услугу входит» и т.д. */
+.services__subtitle {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+/* Текстовые абзацы */
+.services__text,
+.services__heading {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--color-dark);
+}
+
+/* Блоки в списке услуг */
+.services__block-services {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.services__block-info {
+  background: var(--color-small-bg-section);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
 }
