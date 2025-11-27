@@ -245,6 +245,7 @@ html { scroll-behavior: smooth; }
 }
 
 .hero-overlay_title {
+  text-shadow: 0 -5px 7px gray;
   font-size: var(--fs-title-sm);
   font-weight: 600;
   font-family: var(--font-title);
@@ -321,7 +322,7 @@ html { scroll-behavior: smooth; }
 /* Подзаголовок — «Подбор персонала», «В услугу входит» и т.д. */
 .services__subtitle {
   font-family: var(--font-title);
-  font-size: 1.2rem;
+  font-size: var(--fs-base);
   color: var(--color-accent);
   margin-top: 20px;
   margin-bottom: 6px;
@@ -331,7 +332,7 @@ html { scroll-behavior: smooth; }
 .services__text,
 .services__heading {
   font-size: 14px;
-  line-height: 1;
+  line-height: 1.3;
   color: var(--color-dark);
 }
 
@@ -349,3 +350,113 @@ html { scroll-behavior: smooth; }
   padding: 16px;
   box-shadow: var(--shadow-soft);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* блок "Обо мне" поверх картинки */
+.about-hr {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.about__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* затемнение над картинкой */
+.about-hr::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 0;
+}
+
+/* текстовый блок */
+.about-hr__block-text {
+  position: absolute;
+  inset: 20px 16px;
+  z-index: 1;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* абзацы */
+.about-hr__text {
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+
+/* скрываемая часть */
+.about-hr__more {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+
+/* плавное затемнение внизу, когда скрыто */
+.about-hr__block-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,.6));
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity .3s ease;
+}
+
+/* кнопка */
+.about-hr__toggle {
+  margin-top: 6px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* когда раскрыто */
+.about-hr--open .about-hr__more {
+  max-height: 1000px; /* достаточно большое значение */
+}
+
+.about-hr--open .about-hr__block-text::after {
+  opacity: 0;
+}
+

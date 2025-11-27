@@ -77,9 +77,9 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero"> 
       <img
-        src="images/Photo_1.jpg"
+        src="/images/Photo_1.jpg"
         class="hero-logo"
         alt="Основатель компании"
         loading="lazy"
@@ -191,6 +191,7 @@
           потенциал, мечты и ценности. Я верю, что каждая компания - это в
           первую очередь её команда.
         </p>
+        <div class="about-hr__more">
         <p class="about-hr__text">
           Сегодня многие работодатели сталкиваются с тем, что сотрудники уходят
           слишком быстро, не всегда вовлекаются в процесс и теряют мотивацию. Я
@@ -209,6 +210,8 @@
           Для меня HR - это про доверие, честность и заботу. Ведь счастливые
           сотрудники = успешный бизнес.
         </p>
+        </div>
+        <button class="about-hr__toggle" type="button">Читать дальше</button>
       </div>
     </section>
 
@@ -666,6 +669,17 @@ submenuParents.forEach(item => {
   });
 });
   </script>
+<script> /*Кнопка свернуть */
+const aboutSection = document.querySelector('.about-hr');
+const aboutToggle  = document.querySelector('.about-hr__toggle');
+
+if (aboutSection && aboutToggle) {
+  aboutToggle.addEventListener('click', () => {
+    const isOpen = aboutSection.classList.toggle('about-hr--open');
+    aboutToggle.textContent = isOpen ? 'Свернуть' : 'Читать дальше';
+  });
+}
+</script>
 
   
 </html>
