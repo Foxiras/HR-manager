@@ -628,44 +628,47 @@ html { scroll-behavior: smooth; }
 
 
 
-
-/* Блок "Мой опыт" — мобилка */
 .experience {
-  padding: 20px 15px;
+  padding: 5% 3%;
 }
 
-/* Контейнер с карточками */
 .experience-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
-/* Карточка-цитата */
+/* карточки */
 .experience-container__card {
-  margin: 0;
-  padding: 16px 18px;
-  background: #f7f3eb;
+  padding: 3%;
   border-radius: 20px;
-  box-shadow:
-    inset 0 0 14px rgba(255,255,255,0.8),
-    0 4px 10px rgba(0,0,0,0.15);
-  font-size: 15px;
+  box-shadow: inset 1px 1px 5px rgba(0,0,0, 1);
   line-height: 1.4;
-  color: #1d1a16;
+  margin-top: 2%;
 }
 
-/* убираем спец-классы раскладки, чтобы не мешали на мобилке */
-.experience-card__1,
-.experience-card__2,
-.experience-card__3,
-.experience-card__4,
-.experience-card__5,
-.experience-card__6,
-.experience-card__7 {
-  grid-column: auto;
-  grid-row: auto;
+/* скрываемый блок с остальными мыслями */
+.experience__more {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
 }
+
+/* кнопка */
+.experience__toggle {
+  margin-top: 12px;
+  padding: 1% 2%;
+  border-radius: 999px;
+  border: none;
+  background: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.experience--open .experience__more {
+  max-height: 1000px;
+}
+
 
 
 

@@ -454,6 +454,7 @@
           - это не его ошибка, это сигнал компании: пора пересмотреть культуру
           внутри...”
         </blockquote>
+        <div class="experience__more">
         <blockquote class="experience-container__card experience-card__2">
           “HR - это не про контроль, это про поддержку. Там, где людям
           комфортно, не нужно держать их жёсткими рамками...”
@@ -476,7 +477,11 @@
         <blockquote class="experience-container__card experience-card__7">
           “Моя мысля...”
         </blockquote>
+        </div>
       </div>
+      <button class="experience__toggle" type="button">
+    Показать ещё мысли
+  </button>
     </section>
 
     <!-- CONTACT FORM Оставить заявку-->
@@ -680,6 +685,21 @@ if (aboutSection && aboutToggle) {
   });
 }
 </script>
+
+<script>
+  const experienceSection = document.querySelector('.experience');
+  const toggleBtn = document.querySelector('.experience__toggle');
+
+  if (experienceSection && toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const opened = experienceSection.classList.toggle('experience--open');
+      toggleBtn.textContent = opened
+        ? 'Скрыть мысли'
+        : 'Показать ещё мысли';
+    });
+  }
+</script>
+
 
   
 </html>
