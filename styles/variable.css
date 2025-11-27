@@ -20,7 +20,7 @@
   --fs-max-small: clamp(0.875rem, 0.837rem + 0.1739vw, 1rem); /* текст 14-16px */
   --fs-big-small: clamp(1rem, 0.962rem + 0.1739vw, 1.125rem); /* текст (16-18px) */
   --fs-base: clamp(1.125rem, 1.087rem + 0.1739vw, 1.25rem); /* текст (18-20px) */
-  --fs-title-sm: clamp(1.25rem, 1.1739rem + 0.3478vw, 1.5rem);;       /* подзаголовки (20-24px) */
+  --fs-title-sm: clamp(1.25rem, 1.1739rem + 0.3478vw, 1.5rem);/* подзаголовки (20-24px) */
   --fs-title-md: 2rem;         /* крупные заголовки (32px) */
   --fs-title-lg: 2.5rem;       /* главные секции (40px) */
   --fs-hero: 3.5rem;           /* главный заголовок на экране */
@@ -47,4 +47,5 @@
   /* === Тень === */
   --shadow-soft: 2px 2px 4px rgba(0, 0, 0, 0.4);  /* Тень у заголовка крупных блоков*/
   --shadow-strong: 10px 10px 20px rgba(0, 0, 0, 0.5);  /* Тень у мелких блоков */
+  --shadow-strong-internal: inset 5px 5px 20px rgba(0,0,0,1);
 }

@@ -6,7 +6,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-dark);
   font-family: var(--font-main);
-  font-size: var(--fs-big-small);
+  font-size: var(--fs-max-small);
   line-height: 1.2;
   text-align: left;
   word-spacing: normal;
@@ -260,7 +260,6 @@ html { scroll-behavior: smooth; }
 
 .hero-overlay_text {
   color: var(--color-accent);
-  font-size: var(--fs-max-small);
   margin: 0;
 }
 
@@ -288,23 +287,15 @@ html { scroll-behavior: smooth; }
   background: rgba(255, 255, 255, 0.3); 
   backdrop-filter: blur(4px);           
 }
-
 /* линию убираем */
 
 .curve {
   display: none;
 }
 
-
-
-
-
-
-
-
 /* Контейнер секции */
 .services {
-  padding: 24px 16px;
+  padding: 5%;
   background: var(--color-bg-section);
   border-radius: 16px;
   box-shadow: inset 0 0 12px rgba(0,0,0,0.35);
@@ -312,11 +303,12 @@ html { scroll-behavior: smooth; }
 
 /* Заголовок секции */
 .standard-block-parametr__title {
+  text-shadow: var(--shadow-soft);
   font-family: var(--font-title);
-  font-size: var(--fs-base);
+  font-size: var(--fs-title-sm);
   color: var(--color-accent);
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 3%;
 }
 
 /* Подзаголовок — «Подбор персонала», «В услугу входит» и т.д. */
@@ -324,16 +316,18 @@ html { scroll-behavior: smooth; }
   font-family: var(--font-title);
   font-size: var(--fs-base);
   color: var(--color-accent);
-  margin-top: 20px;
-  margin-bottom: 6px;
+  margin-bottom: 2%;
 }
 
 /* Текстовые абзацы */
 .services__text,
 .services__heading {
-  font-size: 14px;
   line-height: 1.3;
   color: var(--color-dark);
+}
+
+.standard-block-parametr__heading {
+  font-weight: 600;
 }
 
 /* Блоки в списке услуг */
@@ -347,32 +341,52 @@ html { scroll-behavior: smooth; }
 .services__block-info {
   background: var(--color-small-bg-section);
   border-radius: 12px;
-  padding: 16px;
+  padding: 4%;
   box-shadow: var(--shadow-soft);
 }
+/* ==== ОБЩИЙ БЛОК ==== */
+.problems {
+  padding: 5% 3%;
+}
 
+/* ==== КОНТЕЙНЕР ==== */
+.block__about-problems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+/* ==== КАЖДАЯ КАРТОЧКА ==== */
+.problems__block {
+  background: var(--color-small-bg-section);
+  padding: 5%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-strong-internal);
+  border: 1px solid rgba(0,0,0,0.07);
+}
 
+/* ==== ЗАГОЛОВОК ==== */
+.problems__title {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: #7a5c20;
+  text-align: center;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
 
+/* ==== ПОДЗАГОЛОВОК "Проблема/Решение" ==== */
+.problems__label {
+  font-weight: 600;
+  margin: 8px 0 4px;
+  color: var(--color-active);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ==== ТЕКСТ ==== */
+.problems__text {
+  line-height: 1.45;
+  color: #1a1a1a;
+}
 
 
 
@@ -459,4 +473,199 @@ html { scroll-behavior: smooth; }
 .about-hr--open .about-hr__block-text::after {
   opacity: 0;
 }
+/* ==== БАЗА (мобилка — текст поверх картинки) ==== */
+
+.section__founder {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* картинка */
+.founder__img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.founder-img__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* затемнение для читабельности текста */
+.founder__img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1),
+    rgba(0,0,0,0.6)
+  );
+  z-index: 1;
+}
+
+/* контент поверх картинки */
+.section__founder > div:nth-child(2) {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  z-index: 2;
+  color: #fff;
+  text-shadow: var(--shadow-soft);
+}
+
+.founder__about-name {
+  font-size: var(--fs-big-small);
+}
+
+/* карточка "основатель" */
+.founder__block-about {
+  background: rgba(255,255,255,0.2);
+  padding: 3%;
+  border-radius: 10px;
+  margin-bottom: 3%;
+}
+
+/* карточка "обо мне" */
+.founder__about-me {
+  background: rgba(255,255,255,0.2);
+  padding: 3%;
+  border-radius: 10px;
+}
+
+.founder__link {
+  padding-left: 5%;
+}
+
+.founder__list {
+  padding-top: 3%;
+}
+/* ==== СТИЛИ БЛОКА СТАТИСТИКИ (МОБИЛКА ПЕРВИЧНАЯ) ==== */
+
+.stats {
+  width: 100%;
+  padding: 5% 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* каждый блок */
+.stats__block {
+  background: var(--color-bg-gold);
+  padding: 5%;
+  border-radius: 20px;
+}
+
+/* текст */
+.stats__text {
+  line-height: 1.35;
+  color: #1d1a16;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* цифры */
+.change-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}
+/* ===== MOBILE FIRST ===== */
+
+.offer {
+  padding: 5% 3%;
+}
+
+.offer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Карточка */
+.offer-container__card {
+  background: var(--color-bg-section);
+  border-radius: 22px;
+  padding: 5% 3%;
+  box-shadow: var(--shadow-strong-internal);
+}
+
+/* Заголовок карточки */
+.offer-container__title {
+  background: var(--color-bg-gold);
+  color: #1d1a16;
+  padding: 2% 2%;
+  text-align: center;
+  font-size: var(--fs-base);
+  font-weight: 700;
+  border-radius: 15px;
+  margin-bottom: 12px;
+}
+
+/* Текст */
+.offer-container__text {
+  line-height: 1.4;
+  color: #1d1a16;
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Блок "Мой опыт" — мобилка */
+.experience {
+  padding: 20px 15px;
+}
+
+/* Контейнер с карточками */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Карточка-цитата */
+.experience-container__card {
+  margin: 0;
+  padding: 16px 18px;
+  background: #f7f3eb;
+  border-radius: 20px;
+  box-shadow:
+    inset 0 0 14px rgba(255,255,255,0.8),
+    0 4px 10px rgba(0,0,0,0.15);
+  font-size: 15px;
+  line-height: 1.4;
+  color: #1d1a16;
+}
+
+/* убираем спец-классы раскладки, чтобы не мешали на мобилке */
+.experience-card__1,
+.experience-card__2,
+.experience-card__3,
+.experience-card__4,
+.experience-card__5,
+.experience-card__6,
+.experience-card__7 {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+
 
