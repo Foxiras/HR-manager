@@ -1,37 +1,37 @@
+// netlify/functions/sendToTelegram.js
 exports.handler = async (event) => {
-  console.log("Function called");
-
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  let data = {};
+  let data;
   try {
     data = JSON.parse(event.body || "{}");
-  } catch (e) {
+  } catch {
     return { statusCode: 400, body: "Bad JSON" };
   }
 
   const BOT_TOKEN = process.env.BOT_TOKEN;
   const CHAT_ID = process.env.CHAT_ID;
 
-  console.log("BOT_TOKEN exists:", !!BOT_TOKEN);
-  console.log("CHAT_ID:", CHAT_ID);
-
-  const text =
-    `Новая заявка\n` +
-    `Имя: ${data.name || "-"}\n` +
-    `Телефон: ${data.phone || "-"}\n` +
-    `Сообщение: ${data.msg || "-"}`;
-
   if (!BOT_TOKEN || !CHAT_ID) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Missing env vars" }),
+      body: JSON.stringify({ ok: false, error: "Missing BOT_TOKEN or CHAT_ID" }),
     };
   }
 
-  const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+  const name = (data.name || "").toString().trim();
+  const phone = (data.phone || "").toString().trim();
+  const msg = (data.msg || "").toString().trim();
+
+  const text =
+    `Новая заявка\n` +
+    `Имя: ${name || "-"}\n` +
+    `Телефон: ${phone || "-"}\n` +
+    `Сообщение: ${msg || "-"}`;
+
+  const tgRes = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -40,8 +40,12 @@ exports.handler = async (event) => {
     }),
   });
 
-  const tg = await resp.text();
-  console.log("Telegram response:", tg);
+  const tgBody = await tgRes.text();
 
-  return { statusCode: resp.ok ? 200 : 500, body: tg };
+  if (!tgRes.ok) {
+    // Отдаём ошибку, чтобы фронт показал "не удалось"
+    return { statusCode: 502, body: tgBody };
+  }
+
+  return { statusCode: 200, body: tgBody };
 };

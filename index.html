@@ -511,6 +511,7 @@
         <input name="name" type="text" placeholder="Ваше имя" required />
         <input type="text" placeholder="Название компании" />
         <input type="text" placeholder="Ваша должность" />
+        <input type="text" name="company_hidden" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off">
         <input
           name="phone"
           type="tel"
@@ -636,71 +637,68 @@
     //* *//
   </script>
   <script>
-    //* КОд для отправки формы в тг *//
-    document.getElementById("tgForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+    //* КОд для отправки формы в netlify и тг *//
+   // js/form-telegram.js
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("tgForm");
+  if (!form) return;
 
-  const fd = new FormData(e.target);
+  const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
 
-  const res = await fetch("/.netlify/functions/sendToTelegram", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: fd.get("name"),
-      phone: fd.get("phone"),
-      msg: fd.get("msg")
-    })
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fd = new FormData(form);
+
+    // Антиспам (honeypot): если поле есть и заполнено — молча выходим
+    // Если у тебя нет такого поля, строка просто ничего не сделает.
+    if (fd.get("company_hidden")) return;
+
+    // Собираем данные (под твои name="")
+    const payload = {
+      name: (fd.get("name") || "").toString().trim(),
+      phone: (fd.get("phone") || "").toString().trim(),
+      msg: (fd.get("msg") || "").toString().trim(),
+    };
+
+    // Мини-валидация
+    if (!payload.name || !payload.phone) {
+      alert("Заполните имя и телефон.");
+      return;
+    }
+
+    // UI: блокируем кнопку
+    const prevText = submitBtn ? submitBtn.textContent : "";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Отправка...";
+    }
+
+    try {
+      const res = await fetch("/.netlify/functions/sendToTelegram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const errText = await res.text().catch(() => "");
+        throw new Error(errText || `HTTP ${res.status}`);
+      }
+
+      form.reset();
+      alert("Спасибо! Заявка отправлена.");
+    } catch (err) {
+      console.error(err);
+      alert("Не удалось отправить заявку. Попробуйте позже.");
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = prevText || "Отправить";
+      }
+    }
   });
-
-  if (res.ok) {
-    e.target.reset();
-    alert("Заявка отправлена");
-  } else {
-    alert("Ошибка отправки");
-  }
 });
-
-if (res.ok) {
-  e.target.reset();
-  alert("Спасибо! Заявка отправлена.");
-} else {
-  alert("Ошибка. Попробуйте позже.");
-}
-
-if (fd.get("company")) return;
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.getElementById("tgForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  alert("submit fired"); // временно для проверки
-
-  const fd = new FormData(e.target);
-
-  const res = await fetch("/.netlify/functions/sendToTelegram", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: fd.get("name"),
-      phone: fd.get("phone"),
-      msg: fd.get("msg"),
-    }),
-  });
-
-  alert("status: " + res.status); // временно
-});
-
 
   </script>
   <script>
