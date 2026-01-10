@@ -508,6 +508,7 @@
         сотрудничества
       </p>
       <form class="form" id="tgForm" netlify>
+        <input type="text" name="company" style="display:none">
         <input name="name" type="text" placeholder="Ваше имя" required />
         <input type="text" placeholder="Название компании" />
         <input type="text" placeholder="Ваша должность" />
@@ -659,6 +660,16 @@
     alert("Ошибка отправки");
   }
 });
+
+if (res.ok) {
+  e.target.reset();
+  alert("Спасибо! Заявка отправлена.");
+} else {
+  alert("Ошибка. Попробуйте позже.");
+}
+
+if (fd.get("company")) return;
+
 
   </script>
   <script>
