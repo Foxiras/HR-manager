@@ -507,7 +507,7 @@
         Заполните форму, и я свяжусь с вами для обсуждения деталей
         сотрудничества
       </p>
-      <form class="form" id="tgForm">
+      <form class="form" id="tgForm" netlify>
         <input name="name" type="text" placeholder="Ваше имя" required />
         <input type="text" placeholder="Название компании" />
         <input type="text" placeholder="Ваша должность" />
@@ -637,34 +637,29 @@
   </script>
   <script>
     //* КОд для отправки формы в тг *//
-    const BOT_TOKEN = "8549431905:AAGPNf-MDX0bR8lYjFRHfeX9svYm98vpPCU";
-    const CHAT_ID = "577593144";
-    const API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-
     document.getElementById("tgForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const fd = new FormData(e.target);
-      const text =
-        `<b>Новая заявка</b>\n` +
-        `<b>Имя:</b> ${fd.get("name")}\n` +
-        `<b>Телефон:</b> ${fd.get("phone")}\n` +
-        `<b>Сообщение:</b> ${fd.get("msg") || "—"}`;
+  e.preventDefault();
 
-      try {
-        const r = await fetch(API, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: "HTML" }),
-        });
-        if (!r.ok) throw 0;
-        e.target.reset();
-        note.textContent = "Отправлено.";
-        note.style.color = "#2c7a2c";
-      } catch {
-        note.textContent = "Ошибка отправки.";
-        note.style.color = "#b00020";
-      }
-    });
+  const fd = new FormData(e.target);
+
+  const res = await fetch("/.netlify/functions/sendToTelegram", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: fd.get("name"),
+      phone: fd.get("phone"),
+      msg: fd.get("msg")
+    })
+  });
+
+  if (res.ok) {
+    e.target.reset();
+    alert("Заявка отправлена");
+  } else {
+    alert("Ошибка отправки");
+  }
+});
+
   </script>
   <script>
     //*Кнопка бургера *//
