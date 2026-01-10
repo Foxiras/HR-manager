@@ -507,8 +507,7 @@
         Заполните форму, и я свяжусь с вами для обсуждения деталей
         сотрудничества
       </p>
-      <form class="form" id="tgForm" netlify>
-        <input type="text" name="company" style="display:none">
+      <form class="form" id="tgForm" >
         <input name="name" type="text" placeholder="Ваше имя" required />
         <input type="text" placeholder="Название компании" />
         <input type="text" placeholder="Ваша должность" />
@@ -669,6 +668,38 @@ if (res.ok) {
 }
 
 if (fd.get("company")) return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("tgForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  alert("submit fired"); // временно для проверки
+
+  const fd = new FormData(e.target);
+
+  const res = await fetch("/.netlify/functions/sendToTelegram", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: fd.get("name"),
+      phone: fd.get("phone"),
+      msg: fd.get("msg"),
+    }),
+  });
+
+  alert("status: " + res.status); // временно
+});
 
 
   </script>
