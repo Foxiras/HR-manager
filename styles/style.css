@@ -874,14 +874,86 @@ h5.services__subtitle {
 }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
   padding: 3%;
   background: #f5f0e5;
   border-radius: 30px 30px 0 0;
   box-shadow:
     inset 0 0 25px rgba(255,255,255,0.8),
     0 4px 16px rgba(0,0,0,0.2);
+}
+
+.footer__one-floor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__two-floor {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  background: inherit;
+  margin-top: 2%;
+  border-top: 2px solid black;
+  min-height: 150px;
+  width: 100%;
+  border-top-right-radius: 100px;
+  padding: 2%;
+}
+
+.footer__two-floor::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.0) 0%,
+    rgba(0, 0, 0, 0.35) 100%,
+    rgba(0, 0, 0, 0.7) 120%
+  );
+  pointer-events: none;
+  border-top-right-radius: 100px;
+}
+
+.nickname_developer {
+  width: 10%;
+  height: 10%;
+  position: relative;
+  z-index: 1;
+  padding-top: 2%;
+}
+
+.two-floor__text {
+  font-size: var(--fs-small);
+  font-family: var(--font-main);
+}
+
+.two-flooor__conf{
+  display: inline;              
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  position: relative;
+  padding: 0 5px;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;   
+  background-size: 0 2px;        
+  transition: background-size 1s ease;
+}
+
+.two-flooor__conf:hover{
+  background-color: rgba(115,115,115,0.1);
+  border-radius: 60px;
+}
+
+.two-flooor__conf:active{
+  background-size: 100% 2px;
+}
+
+.two-flooor__conf:focus-visible{
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 60px;
 }
 
 .site-a-cap__brand-footer {
@@ -1213,6 +1285,15 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   
+}
+
+.footer__two-floor {
+  display: flex;
+  flex-direction: row;
+}
+
+.two-floor__block-about {
+  padding: 0 6% 0 6%;
 }
 
 }
