@@ -933,7 +933,7 @@ h5.services__subtitle {
   color: #000;
   text-decoration: none;
   position: relative;
-  padding: 0 5px;
+  padding: 0 6px;
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
   background-position: 0 100%;   
