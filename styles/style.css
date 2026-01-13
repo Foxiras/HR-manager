@@ -24,7 +24,7 @@ html { scroll-behavior: smooth; }
   position: relative;
   width: 100%;
   background: #e5e2da;
-  border-radius: 60px;
+  border-bottom-left-radius: clamp(40px, 8vw, 60px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -207,9 +207,7 @@ html { scroll-behavior: smooth; }
   height: 100%;
   padding: 5px 10px 5px 10px;
   color: #000;
-  border: 1px solid transparent;
-  border-top-right-radius: 24px;
-  border-bottom-right-radius: 24px;
+  border: none;
   font-family: var(--font-alt);
   outline: none;
   font-weight: 600;
@@ -1213,6 +1211,7 @@ body {
 
   .site-a-cap {
     justify-content:flex-start;
+    border-bottom-right-radius: 40px;
     gap: 50px;
   }
   
@@ -1222,7 +1221,7 @@ body {
 
 .button-completion {
   width: 150px;
-  border-radius: 20px;
+  border-radius: 20px 0px 0px;
   border-bottom-right-radius: 40px;
   font-weight: 600;
 }
