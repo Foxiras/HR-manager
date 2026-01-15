@@ -497,40 +497,51 @@
     </section>
 
     <!-- CONTACT FORM Оставить заявку-->
-    <section
-      id="request"
-      class="contact__form reveal"
-      data-delay="120"
-    >
-      <h2 class="contact-form__title">Оставьте заявку</h2>
-      <p class="standard-block-parametr__heading">
-        Заполните форму, и я свяжусь с вами для обсуждения деталей
-        сотрудничества
-      </p>
-      <form class="form" id="tgForm" >
-        <input name="name" type="text" placeholder="Ваше имя" required />
-        <input type="text" placeholder="Название компании" />
-        <input type="text" placeholder="Ваша должность" />
-        <input type="text" name="company_hidden" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off">
-        <input
-          name="phone"
-          type="tel"
-          placeholder="+7 ___ ___-__-__"
-          inputmode="numeric"
-          pattern="\d+"
-          maxlength="11"
-          id="phone"
-          autocomplete="tel"
-          pattern="^\+7\d{4}-\d{3}-\d{4}$"
-          required
-        />
-        <textarea name="msg" placeholder="Кратко опишите запрос"></textarea>
-        <button type="submit" class="contact-form_button">
-          Оставить заявку
-        </button>
-      </form>
-      <!-- <p id="note"></p> -->
-    </section>
+    <section id="request" class="contact__form reveal" data-delay="120">
+  <h2 class="contact-form__title">Оставьте заявку</h2>
+  <p class="standard-block-parametr__heading">
+    Заполните форму, и я свяжусь с вами для обсуждения деталей сотрудничества
+  </p>
+
+  <form
+    class="form"
+    id="tgForm"
+    action="https://submit-form.com/uxy65OHok"
+    method="POST"
+  >
+    <input name="name" type="text" placeholder="Ваше имя" required />
+
+    <input name="company" type="text" placeholder="Название компании" />
+    <input name="position" type="text" placeholder="Ваша должность" />
+
+    <!-- honeypot (антиспам): оставь пустым, пользователь не видит -->
+    <input
+      type="text"
+      name="company_hidden"
+      style="position:absolute;left:-9999px"
+      tabindex="-1"
+      autocomplete="off"
+    />
+
+    <input
+      name="phone"
+      type="tel"
+      placeholder="+7XXXXXXXXXX"
+      inputmode="numeric"
+      autocomplete="tel"
+      pattern="^\\+7\\d{10}$"
+      required
+    />
+
+    <textarea name="msg" placeholder="Кратко опишите запрос"></textarea>
+
+    <!-- можно использовать в Pipedream, чтобы понимать источник -->
+    <input type="hidden" name="source" value="hr-site" />
+
+    <button type="submit" class="contact-form_button">Оставить заявку</button>
+  </form>
+</section>
+
 
     <!-- FOOTER Первый этаж-->
     <footer class="footer">
