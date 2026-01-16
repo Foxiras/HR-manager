@@ -539,7 +539,21 @@
 
     <!-- можно использовать в Pipedream, чтобы понимать источник -->
     <input type="hidden" name="source" value="hr-site" />
-
+    <label class="form-consent">
+  <input
+  class="button-approval"
+  type="checkbox"
+  name="consent"
+  required
+  oninvalid="this.setCustomValidity('Необходимо дать согласие на обработку данных')"
+  onchange="this.setCustomValidity('')"
+/>
+  <span class="form-consent__text">
+    Я даю согласие на обработку персональных данных
+    в соответствии с
+    <a class="two-flooor__conf" href="/privacy.html">Политикой конфиденциальности</a>
+  </span>
+</label>
     <button type="submit" class="contact-form_button">Оставить заявку</button>
   </form>
 </section>

@@ -10,6 +10,7 @@ body {
   line-height: 1.2;
   text-align: left;
   word-spacing: normal;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -871,6 +872,30 @@ h5.services__subtitle {
   border: 1px solid black;
 }
 
+.form-consent {
+  display: flex;
+  gap: 1%;
+}
+
+.form-consent input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+.button-approval {
+  display: inline-block;
+  background: transparent !important;
+  width: auto !important;
+  height: auto !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  
+}
+
+.form-consent__text {
+  font-size: var(--fs-supersmall);
+}
+
 .footer {
   padding: 3%;
   background: #f5f0e5;
@@ -932,7 +957,7 @@ h5.services__subtitle {
   color: #000;
   text-decoration: none;
   position: relative;
-  padding: 0 6px;
+  padding: 0;
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
   background-position: 0 100%;   
@@ -1509,6 +1534,7 @@ ul li::marker {
   padding: 5%;
   color: rgb(56, 56, 55);
   background: rgb(156, 155, 154, 0.4);
+  font-family: var(--font-alt);
 }
 
 .page-privacy .main-title {
@@ -1531,4 +1557,6 @@ ol li::marker {
 }
 
 .page-privacy .text {
+  font-size: var(--fs-body);
 }
+
