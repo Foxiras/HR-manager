@@ -22,10 +22,13 @@ html { scroll-behavior: smooth; }
 .anchor { scroll-margin-top: var(--header-h); }
 
 .site-a-cap {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
   width: 100%;
   background: #e5e2da;
-  border-bottom-left-radius: clamp(40px, 8vw, 60px);
+  border-bottom-left-radius: clamp(10px, 6vw, 60px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1240,6 +1243,7 @@ body {
   }
 
   .site-a-cap {
+    position: relative;
     justify-content:flex-start;
     border-bottom-right-radius: 40px;
     gap: 50px;
