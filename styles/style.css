@@ -899,21 +899,9 @@ h5.services__subtitle {
   font-size: var(--fs-supersmall);
 }
 
-
-
-
 .form {
   position: relative;
 }
-
-
-
-
-
-
-
-
-
 
 .form-success {
   position: absolute;
@@ -921,13 +909,12 @@ h5.services__subtitle {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: rgba(255, 255, 255, 0.92);
+  border-radius: 10000px;
+  background: transparent;
   color: #1a7f37;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 800;
   text-align: center;
-
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -936,21 +923,6 @@ h5.services__subtitle {
 .form-success.is-visible {
   opacity: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .footer {
   padding: 3%;
