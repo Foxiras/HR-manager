@@ -896,6 +896,7 @@ h5.services__subtitle {
   width: 100%;
   border-top-right-radius: 100px;
   padding: 2%;
+  gap: 30px;
 }
 
 .footer__two-floor::before {
@@ -913,15 +914,15 @@ h5.services__subtitle {
 }
 
 .nickname_developer {
-  width: 10%;
-  height: 10%;
+  width: 20%;
+  height: 20%;
   position: relative;
   z-index: 1;
-  padding-top: 2%;
+  padding-top: 10%;
 }
 
 .two-floor__text {
-  font-size: var(--fs-small);
+  font-size: var(--fs-supersmall);
   font-family: var(--font-main);
 }
 
@@ -1146,6 +1147,10 @@ h5.services__subtitle {
   fill: #000;
 }
 
+.two-floor__block-about {
+  padding: 0px 6% 0 0%;
+}
+
 @media (min-width: 768px) {
 body {
   font-size: var(--fs-big-small);
@@ -1291,9 +1296,7 @@ body {
   flex-direction: row;
 }
 
-.two-floor__block-about {
-  padding: 0 6% 0 6%;
-}
+
 
 }
 
@@ -1497,3 +1500,35 @@ ul li::marker {
 
 }
 
+
+
+
+
+
+.page-privacy .content {
+  padding: 5%;
+  color: rgb(56, 56, 55);
+  background: rgb(156, 155, 154, 0.4);
+}
+
+.page-privacy .main-title {
+  font-size: var(--fs-h1);
+}
+
+.page-privacy .title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: var(--fs-h2);
+}
+
+.page-privacy li {
+  margin-left: 7%;
+}
+
+ol li::marker {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.page-privacy .text {
+}
