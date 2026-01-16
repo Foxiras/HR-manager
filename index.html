@@ -506,9 +506,9 @@
   <form
     class="form"
     id="tgForm"
-    action="https://eo1tgqjbmzd73gk.m.pipedream.net"
-    method="POST"
   >
+  <!-- action="https://eo1tgqjbmzd73gk.m.pipedream.net"
+    method="POST" -->
     <input name="name" type="text" placeholder="Ваше имя" required />
 
     <input name="company" type="text" placeholder="Название компании" />
@@ -555,6 +555,8 @@
   </span>
 </label>
     <button type="submit" class="contact-form_button">Оставить заявку</button>
+    <div id="formSuccess" class="form-success" aria-live="polite"></div>
+
   </form>
 </section>
 
@@ -645,123 +647,147 @@
         </div>
       </div>
     </footer>
-  </body>
+    <script>
+window.addEventListener("load", () => {
+  const form = document.getElementById("tgForm");
+  const successEl = document.getElementById("formSuccess");
 
-  <script>
+  if (!form) return;
+
+  // Телефон: только цифры
+  const phone = document.querySelector('#tgForm input[name="phone"]');
+  if (phone) {
     phone.addEventListener("input", (e) => {
-      e.target.value = e.target.value.replace(/\D/g, ""); // убирает всё, кроме цифр (блок с заявкой)
+      e.target.value = e.target.value.replace(/\D/g, "");
+    });
+  }
+
+  // Reveal-анимации
+  const io = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          const d = en.target.dataset.delay || 0;
+          en.target.style.transitionDelay = d + "ms";
+          en.target.classList.add("in");
+          obs.unobserve(en.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+  );
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // Бургер
+  const burger = document.getElementById("burger");
+  const menu = document.querySelector(".main-nav");
+
+  if (burger && menu) {
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("active");
+      menu.classList.toggle("open");
     });
 
-    //* Блоки плавно появляются *//
-    const io = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            // опциональная задержка: <div class="reveal" data-delay="120">
-            const d = e.target.dataset.delay || 0;
-            e.target.style.transitionDelay = d + "ms";
-            e.target.classList.add("in");
-            obs.unobserve(e.target); // анимация один раз
-            // } else {
-            //   e.target.classList.remove('in');
-            // } Чтобы снова прятались
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
-    );
+    document.querySelectorAll(".menu-has-sub").forEach((item) => {
+      const toggle = item.querySelector(".submenu-toggle");
+      if (!toggle) return;
+      toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        item.classList.toggle("active");
+      });
+    });
+  }
 
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  // About: читать дальше
+  const section = document.querySelector(".about-hr");
+  const toggle = document.querySelector(".about-hr__toggle");
+  const more = document.querySelector(".about-hr__more");
 
-    //* *//
-  </script>
-  <script>
-    
-  </script>
-  <script>
-    //*Кнопка бургера *//
-    const burger = document.getElementById('burger');
-const menu = document.querySelector('.main-nav');
+  if (section && toggle && more) {
+    const mq = window.matchMedia("(max-width: 990px)");
+    const OPEN_CLASS = "about-hr--open";
 
-burger.addEventListener('click', () => {
-  burger.classList.toggle('active');
-  menu.classList.toggle('open');
-});
-
-const submenuParents = document.querySelectorAll('.menu-has-sub');
-
-submenuParents.forEach(item => {
-  const toggle = item.querySelector('.submenu-toggle');
-
-  toggle.addEventListener('click', (e) => {
-    e.preventDefault(); // чтобы не прыгал по якорю
-    item.classList.toggle('active');
-  });
-});
-  </script>
-<script> /*Кнопка свернуть */
-document.addEventListener('DOMContentLoaded', () => {
-  const section = document.querySelector('.about-hr');
-  const toggle  = document.querySelector('.about-hr__toggle');
-  const more    = document.querySelector('.about-hr__more');
-
-  if (!section || !toggle || !more) return;
-
-  const mq = window.matchMedia('(max-width: 990px)');
-  const OPEN_CLASS = 'about-hr--open';
-
-  function setState(isMobile) {
-    if (isMobile) {
-      // Мобилка: закрыто по умолчанию
-      section.classList.remove(OPEN_CLASS);
-      more.hidden = true;
-      toggle.style.display = '';
-      toggle.textContent = 'Читать дальше';
-      toggle.setAttribute('aria-expanded', 'false');
-    } else {
-      // Десктоп: всегда открыто, кнопки нет
-      section.classList.add(OPEN_CLASS);
-      more.hidden = false;
-      toggle.style.display = 'none';
-      toggle.setAttribute('aria-expanded', 'true');
+    function setState(isMobile) {
+      if (isMobile) {
+        section.classList.remove(OPEN_CLASS);
+        more.hidden = true;
+        toggle.style.display = "";
+        toggle.textContent = "Читать дальше";
+        toggle.setAttribute("aria-expanded", "false");
+      } else {
+        section.classList.add(OPEN_CLASS);
+        more.hidden = false;
+        toggle.style.display = "none";
+        toggle.setAttribute("aria-expanded", "true");
+      }
     }
+
+    toggle.addEventListener("click", () => {
+      if (!mq.matches) return;
+      const isOpen = section.classList.toggle(OPEN_CLASS);
+      more.hidden = !isOpen;
+      toggle.textContent = isOpen ? "Свернуть" : "Читать дальше";
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    setState(mq.matches);
+    mq.addEventListener?.("change", (e) => setState(e.matches));
   }
 
-  // Клик работает только когда кнопка видима (мобилка)
-  toggle.addEventListener('click', () => {
-    if (!mq.matches) return;
-
-    const isOpen = section.classList.toggle(OPEN_CLASS);
-    more.hidden = !isOpen;
-    toggle.textContent = isOpen ? 'Свернуть' : 'Читать дальше';
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  // Первичная установка режима
-  setState(mq.matches);
-
-  // Переключение при ресайзе/повороте
-  if (mq.addEventListener) {
-    mq.addEventListener('change', (e) => setState(e.matches));
-  } else {
-    mq.addListener((e) => setState(e.matches)); // старые Safari
-  }
-});
-</script>
-<script>
-  const experienceSection = document.querySelector('.experience');
-  const toggleBtn = document.querySelector('.experience__toggle');
-
+  // Experience
+  const experienceSection = document.querySelector(".experience");
+  const toggleBtn = document.querySelector(".experience__toggle");
   if (experienceSection && toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      const opened = experienceSection.classList.toggle('experience--open');
-      toggleBtn.textContent = opened
-        ? 'Скрыть мысли'
-        : 'Показать ещё мысли';
+    toggleBtn.addEventListener("click", () => {
+      const opened = experienceSection.classList.toggle("experience--open");
+      toggleBtn.textContent = opened ? "Скрыть мысли" : "Показать ещё мысли";
     });
   }
-</script>
 
+  // ====== ОТПРАВКА ФОРМЫ (ОДИН РАЗ) ======
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    if (successEl) {
+      successEl.textContent = "Отправка...";
+      successEl.classList.add("is-visible");
+    }
+
+    try {
+      const res = await fetch("https://eo1tgqjbmzd73gk.m.pipedream.net", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("HTTP " + res.status);
+
+      if (successEl) {
+        successEl.textContent = "Заявка отправлена";
+        setTimeout(() => {
+          successEl.classList.remove("is-visible");
+          successEl.textContent = "";
+        }, 2500);
+      }
+
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      if (successEl) {
+        successEl.textContent = "Ошибка отправки";
+        setTimeout(() => {
+          successEl.classList.remove("is-visible");
+        }, 3000);
+      }
+    }
+  }, true);
+});
+</script>
 
   
+  </body>
+
 </html>
