@@ -7,6 +7,10 @@
     <!-- Подключаем шрифты отдельным файлом -->
     <link rel="stylesheet" href="styles/global.css" />
 
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+
     <!-- Подключаем основные стили -->
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/variable.css" />
@@ -15,9 +19,10 @@
     <!-- HEADER -->
     <header class="site-a-cap" role="banner">
       <a class="site-a-cap__brand" href="/" aria-label="На главную">
-        <img class="site-a-cap__logo" src="images/log_HC.svg" loading="lazy" alt="логотип-страницы">
+        <img class="site-a-cap__logo" src="images/ChatGPT Image 10 мар. 2026 г., 20_24_52.png" loading="lazy" alt="логотип-страницы">
+        <img class=" aabout__icon--bg" src="images/ChatGPT Image 10 мар. 2026 г., 20_24_52.png" alt="">
         <div class="site-a-cap__brand-text">
-          <span class="site-a-cap__brand-title">НС – Капитал талантов</span>
+          <span class="site-a-cap__brand-title"> Капитал талантов</span>
           <span class="site-a-cap__brand-tagline"
             >Ваш надёжный партнёр в подборе персонала</span
           >
@@ -86,7 +91,7 @@
       />
       <div class="hero-overlay">
         <h1 class="hero-overlay_title">
-          НС — Ваш
+           Ваш
           <span class="hero-overlay_text-slogan">главный капитал — это люди</span>
         </h1>
         <p class="hero-overlay_text">
@@ -107,8 +112,6 @@
           />
         </svg>
         <p class="hero-note_text">
-  Human Resource —<br />
-  <span class="hero-note_accent">Human Capital</span><br />
   Люди не ресурс, люди<br />
   <span class="hero-note_accent">— это капитал</span>
 </p>
@@ -124,17 +127,12 @@
         <p class="services__heading standard-block-parametr__heading">
           Я закрываю полный цикл HR-процессов — от поиска до удержания.
         </p>
-        <h3 class="services__subtitle">Подбор персонала</h3>
-        <p class="services__text"
-          >Помогаю компаниям находить сотрудников, которые не просто
-          соответствуют требования вакансии, но и гармонично вписываются в
-          корпоративную культуру
-        </p>
-
-        <h4 class="services__subtitle">В услугу входит:</h4>
         <article class="services__block-services">
           <div class="services__block-info">
-            <h5 class="services__subtitle">Анализ вакансии</h5>
+            <div class = "services__block-icon">
+            <img class="services-icon" src ="images/service_icon/analytics.png" alt="Анализ вакансии и требований к кандидату">
+            </div>
+            <h3 class="services__subtitle">Анализ вакансии</h3>
             <p class="services__text">
               Определение потребностей бизнеса, составление профиля должности,
               размещение вакансии.
@@ -142,43 +140,36 @@
           </div>
 
           <div class="services__block-info">
-            <h5 class="services__subtitle">Поиск кандидатов</h5>
+            <div class = "services__block-icon">
+            <img class="services-icon" src ="images/service_icon/search.png" alt="Поиск кандидатов и анализ резюме">
+            </div>
+            <h3 class="services__subtitle">Поиск кандидатов</h3>
             <p class="services__text">
               Базы, соцсети, профессиональные сообщества, рекомендации.
             </p>
           </div>
           <div class="services__block-info">
-            <h5 class="services__subtitle">Адаптация</h5>
+            <div class = "services__block-icon">
+            <img class="services-icon" src ="images/service_icon/checklist.png" alt="Оценка кандидатов и проверка навыков">
+            </div>
+            <h3 class="services__subtitle">Этапы отбора</h3>
             <p class="services__text">
-              Программы введения, наставничества, снижение текучести.
-            </p>
-          </div>
-
-          <div class="services__block-info">
-            <h5 class="services__subtitle">Отбор 1-й этап</h5>
-            <p class="services__text">
-              Скрининг резюме, телефонные интервью. Собеседования и оценка
-              компетенций с использованием тестов и методик. 
+              Скрининг резюме, интервью. Представление лучших кандидатов. 
             </p>
           </div>
           <div class="services__block-info">
-            <h5 class="services__subtitle">Отбор 2-й этап</h5>
+            <div class = "services__block-icon">
+            <img class="services-icon" src ="images/service_icon/contract.png" alt="Согласование условий и найм сотрудника">
+            </div>
+            <h3 class="services__subtitle">Адаптация</h3>
             <p class="services__text">
-              Представление
-              лучших кандитатов работодателю с рекомендациями.
+              Сопровождение на этапе оффера. Ввод в должность в соответствии с ТК РФ.
             </p>
           </div>
-          <div class="services__block-info">
-            <h5 class="services__subtitle">Отбор 3-й этап</h5>
-            <p class="services__text">
-              Сопровождение
-              финального выбора и поддержка на этапе оффера. Оформление и ввод в
-              должность в соответствии с ТК РФ.
-            </p>
-          </div>
+          
         </article>
-        <div>
-          <h4 class="services__subtitle">Результат:</h4>
+        <div class="services__block-result">
+          <img class="services-icon_check" src ="images/service_icon/check.png">
           <p class="services__text">
             Вы получаете сотрудника, который соответствует требованиям бизнеса и
             мотивирован работать с первых дней.
@@ -336,7 +327,7 @@
         </div>
         <div class="founder__about-me">
           <div class="founder__title">
-            <p>HR-менеджер с 3-летним опытом и современным подходом</p>
+            <p class="founder__title-text">HR-менеджер с 3-летним опытом и современным подходом</p>
           </div>
           <ul class="founder__link">
             <li class="founder__list">
@@ -360,40 +351,59 @@
 
     <!-- STATS Достижения-->
     <section id="about" class="stats reveal" data-delay="240">
-      <article class="stats__block stats__block_1">
+      <article class="stats__block">
+        <img class="about__icon" src="images/about_icon/grownchart.png">
+        <img class=" about__icon--bg" src="images/about_icon/grownchart.png" alt="">
+        <p class="change-text">30+</p>
+        <h2 class="stats__title-text">программ адаптации</h2>
         <p class="stats__text">
-          Сформировано <strong class="change-text">30+</strong> программ адаптации, которые помогли
+          Сформировано  программ адаптации, которые помогли
           снизить текучесть.
         </p>
       </article>
-      <article class="stats__block stats__block_2">
+      <article class="stats__block">
         <p class="stats__text">
           опыт управления полным циклом HR-процессов в компаниях разного
           масштаба
         </p>
       </article>
-      <article class="stats__block stats__block_3">
+      <article class="stats__block">
+        <img class="about__icon" src="images/about_icon/target.png">
+        <img class=" about__icon--bg" src="images/about_icon/target.png" alt="">
+        <p class="change-text">15+</p>
+        <h2 class="stats__title-text">тренингов и мероприятий</h2>
         <p class="stats__text">
-          Организовано <strong class="change-text">15+</strong> тренингов и мероприятий, повысивших
+          Организовано  тренингов и мероприятий, повысивших
           вовлечённость персонала.
         </p>
       </article>
-      <article class="stats__block stats__block_4">
+      <article class="stats__block">
+        <img class="about__icon" src="images/about_icon/people.png">
+        <img class=" about__icon--bg" src="images/about_icon/people.png" alt="">
+        <p class="change-text">50+</p>
+        <h2 class="stats__title-text">закрытых вакансий</h2>
         <p class="stats__text">
-          <strong class="change-text">50+</strong> успешно закрытых вакансий от специалистов до
+         успешно закрытых вакансий от специалистов до
           руководителей
         </p>
       </article>
-      <article class="stats__block stats__block_5">
+      <article class="stats__block">
+        <img class="about__icon" src="images/about_icon/team.png">
+        <img class=" about__icon--bg" src="images/about_icon/team.png" alt="">
+        <p class="change-text">20+</p>
+        <h2 class="stats__title-text">удержано сотрудников</h2>
         <p class="stats__text">
-          Удержано <strong class="change-text">20+</strong> ключевых сотрудников, сохранивших
+          Удержано ключевых сотрудников, сохранивших
           экспертизу компании.
         </p>
       </article>
-      <article class="stats__block stats__block_6">
+      <article class="stats__block">
+        <img class="about__icon" src="images/about_icon/businessgrowth.png">
+        <img class=" about__icon--bg" src="images/about_icon/businessgrowth.png" alt="">
+        <p class="change-text">70+</p>
+        <h2 class="stats__title-text">исполнителей</h2>
         <p class="stats__text">
-          Веду 5 компаний, в которых суммарно больше
-          <strong class="change-text">70+</strong> исполнителей
+          Веду 5 компаний, в которых суммарно больше исполнителей
         </p>
       </article>
     </section>

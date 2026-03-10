@@ -1,13 +1,11 @@
 :root {
   /* === Цвета === */
-  --color-bg-gold: 
-  radial-gradient(120% 70% at 50% 0%, rgba(255,255,255,.35) 0 40%, transparent 60%),
-    linear-gradient(90deg,#a67c00 0%, #d4af37 22%, #f1da7a 45%, #d4af37 70%, #a67c00 100%);   /* Чистое золото*/
+  --color-bg-accent: #162C6E;   /* Темно-синий*/
   --color-bg: rgb(252, 249, 240);           /* молочный фон у body*/
   --color-bg-section: rgba(252, 247, 235);         /* фон у крупных блоков/секций */
   --color-small-bg-section: rgba(43, 43, 43, 0.1); /* Фон у мелких блоков */
   --color-block-header: rgb(199, 165, 171, 0.3); /* Фон у заголовка блоков, мелких */
-  --color-accent: color-mix(in srgb, #d4af37 100%, black 70%); /* золото / акцент текст */
+  --color-accent: #4F3B22; /* темное золото, заголовки блоков */
   --color-dark: #000000;         /* глубокий чёрный */
   --color-light: #FFFFFF;        /* белый */
   --color-active: rgb(112, 110, 105, 0.9);
