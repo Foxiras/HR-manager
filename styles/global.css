@@ -36,3 +36,10 @@ img {
 button {
   font: inherit;
 }
+
+input,
+textarea {
+  font-family: var(--font-main);
+  font-size: var(--fs-small);
+  color: var(#000000);
+}
