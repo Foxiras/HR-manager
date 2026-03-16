@@ -405,7 +405,6 @@ html { scroll-behavior: smooth; }
 }
 
 .hero-overlay_title {
-  text-shadow: 0 -5px 7px gray;
   font-size: var(--fs-h1);
   font-weight: 600;
   font-family: var(--font-title);
