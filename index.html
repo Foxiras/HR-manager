@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -7,9 +7,10 @@
     <!-- Подключаем шрифты отдельным файлом -->
     <link rel="stylesheet" href="styles/global.css" />
 
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Подключаем основные стили -->
     <link rel="stylesheet" href="styles/style.css" />
@@ -17,10 +18,19 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header class="site-a-cap" role="banner">
+    <header class="site-a-cap reveal" role="banner">
       <a class="site-a-cap__brand" href="/" aria-label="На главную">
-        <img class="site-a-cap__logo" src="images/logo_hc_capital.png" loading="lazy" alt="логотип-страницы">
-        <img class="shadow-about__icon--bg" src="images/logo_hc_capital.png" alt="">
+        <img
+          class="site-a-cap__logo"
+          src="images/logo_hc_capital.png"
+          loading="lazy"
+          alt="логотип-страницы"
+        />
+        <img
+          class="shadow-about__icon--bg"
+          src="images/logo_hc_capital.png"
+          alt=""
+        />
         <div class="site-a-cap__brand-text">
           <span class="site-a-cap__brand-title"> Капитал талантов</span>
           <span class="site-a-cap__brand-tagline"
@@ -33,66 +43,75 @@
           <ul id="mainmenu" class="menu">
             <li class="menu-list"><a href="#about">О нас</a></li>
             <li class="menu-list"><a href="#services">Услуги</a></li>
-            <li class="menu-list menu-has-sub"><a href="#contacts" class="submenu-toggle">Контакты</a>
-             <div class="submenu">
-          <p class="submenu__text">
-          Телефон:
-          <a href="tel:+7XXXXXXXXXX"
-            >+7 (XXX) XXX-XX-XX</a>
-        </p>
-        <address class="submenu__address submenu__text">
-          Email:
-          <a href="mailto:hc-capital@mail.ru?subject=Вопрос&body=Здравствуйте">hc-capital@mail.ru</a>
-        </address>
-        <address class="submenu__address submenu__text">
-          Адрес:
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=г.+Симферополь,+ул.+Лабутева,+1"
-            target="_blank"
-            rel="noopener"
-            class="google_address"
-            >г. Симферополь, ул. Лабутева, 1</a
-          >
-        </address>
-  </div>
-</li>
+            <li class="menu-list menu-has-sub">
+              <a href="#contacts" class="submenu-toggle">Контакты</a>
+              <div class="submenu">
+                <p class="submenu__text">
+                  Телефон:
+                  <a href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a>
+                </p>
+                <address class="submenu__address submenu__text">
+                  Email:
+                  <a
+                    href="mailto:hc-capital@mail.ru?subject=Вопрос&body=Здравствуйте"
+                    >hc-capital@mail.ru</a
+                  >
+                </address>
+                <address class="submenu__address submenu__text">
+                  Адрес:
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=г.+Симферополь,+ул.+Лабутева,+1"
+                    target="_blank"
+                    rel="noopener"
+                    class="google_address"
+                    >г. Симферополь, ул. Лабутева, 1</a
+                  >
+                </address>
+              </div>
+            </li>
             <li class="menu-list"><a href="#blog">Блог</a></li>
             <li class="menu-list"><a href="#media">СМИ</a></li>
           </ul>
         </nav>
-          <div class="main-menu">
-            <a class="site-a-cap_phone" href="tel:+7XXXXXXXXXX"
-              >+7 (XXX) XXX-XX-XX
-            </a>
-            <!-- Бургер-кнопка -->
-            <div class="burger" id="burger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <button
-              class="button-completion"
-              type="button"
-              onclick="document.querySelector('#request').scrollIntoView({behavior: 'smooth'});"
-            >
-              Оставить заявку
-            </button>
+        <div class="main-menu">
+          <a class="site-a-cap_phone" href="tel:+7XXXXXXXXXX"
+            >+7 (XXX) XXX-XX-XX
+          </a>
+          <!-- Бургер-кнопка -->
+          <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
+          <button
+            class="button-completion"
+            type="button"
+            onclick="
+              document
+                .querySelector('#request')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Оставить заявку
+          </button>
         </div>
+      </div>
     </header>
 
     <!-- HERO -->
-    <section class="hero"> 
+    <section class="hero reveal">
       <img
-        src="images/Photo_1.jpg"
+        src="images/Owners_photo/DSC06297.png"
         class="hero-logo"
         alt="Фотография основателя компании в черно-белом формате"
         loading="lazy"
       />
       <div class="hero-overlay">
         <h1 class="hero-overlay_title">
-           Ваш
-          <span class="hero-overlay_text-slogan">главный капитал — это люди</span>
+          Ваш
+          <span class="hero-overlay_text-slogan"
+            >главный капитал — это люди</span
+          >
         </h1>
         <p class="hero-overlay_text">
           Мы превращаем талант в ценность для компаний и кандидатов
@@ -112,25 +131,31 @@
           />
         </svg>
         <p class="hero-note_text">
-  Люди не ресурс, люди<br />
-  <span class="hero-note_accent">— это капитал</span>
-</p>
+          <span id="heroLine1"></span><br />
+          <span id="heroLine2" class="hero-note_accent"></span>
+        </p>
       </div>
     </section>
 
     <!-- SERVICES Чем могу быть полезна? -->
-    <section class="services standard-block-parametr reveal" data-delay="240" id="services">
-      <h2 class="standard-block-parametr__title">
-        Чем могу быть полезна?
-      </h2>
+    <section
+      class="services standard-block-parametr reveal"
+      data-delay="240"
+      id="services"
+    >
+      <h2 class="standard-block-parametr__title">Чем могу быть полезна?</h2>
       <div class="services__block-about">
         <p class="services__heading standard-block-parametr__heading">
           Я закрываю полный цикл HR-процессов — от поиска до удержания.
         </p>
         <article class="services__block-services">
           <div class="services__block-info">
-            <div class = "services__block-icon">
-            <img class="services-icon" src ="images/service_icon/analytics.png" alt="Анализ вакансии и требований к кандидату">
+            <div class="services__block-icon">
+              <img
+                class="services-icon"
+                src="images/service_icon/analytics.png"
+                alt="Анализ вакансии и требований к кандидату"
+              />
             </div>
             <h3 class="services__subtitle">Анализ вакансии</h3>
             <p class="services__text">
@@ -140,8 +165,12 @@
           </div>
 
           <div class="services__block-info">
-            <div class = "services__block-icon">
-            <img class="services-icon" src ="images/service_icon/search.png" alt="Поиск кандидатов и анализ резюме">
+            <div class="services__block-icon">
+              <img
+                class="services-icon"
+                src="images/service_icon/search.png"
+                alt="Поиск кандидатов и анализ резюме"
+              />
             </div>
             <h3 class="services__subtitle">Поиск кандидатов</h3>
             <p class="services__text">
@@ -149,27 +178,38 @@
             </p>
           </div>
           <div class="services__block-info">
-            <div class = "services__block-icon">
-            <img class="services-icon" src ="images/service_icon/checklist.png" alt="Оценка кандидатов и проверка навыков">
+            <div class="services__block-icon">
+              <img
+                class="services-icon"
+                src="images/service_icon/checklist.png"
+                alt="Оценка кандидатов и проверка навыков"
+              />
             </div>
             <h3 class="services__subtitle">Этапы отбора</h3>
             <p class="services__text">
-              Скрининг резюме, интервью. Представление лучших кандидатов. 
+              Скрининг резюме, интервью. Представление лучших кандидатов.
             </p>
           </div>
           <div class="services__block-info">
-            <div class = "services__block-icon">
-            <img class="services-icon" src ="images/service_icon/contract.png" alt="Согласование условий и найм сотрудника">
+            <div class="services__block-icon">
+              <img
+                class="services-icon"
+                src="images/service_icon/contract.png"
+                alt="Согласование условий и найм сотрудника"
+              />
             </div>
             <h3 class="services__subtitle">Адаптация</h3>
             <p class="services__text">
-              Сопровождение на этапе оффера. Ввод в должность в соответствии с ТК РФ.
+              Сопровождение на этапе оффера. Ввод в должность в соответствии с
+              ТК РФ.
             </p>
           </div>
-          
         </article>
         <div class="services__block-result">
-          <img class="services-icon_check" src ="images/service_icon/check.png">
+          <img
+            class="services-icon_check"
+            src="images/service_icon/check.png"
+          />
           <p class="services__text">
             Вы получаете сотрудника, который соответствует требованиям бизнеса и
             мотивирован работать с первых дней.
@@ -182,7 +222,7 @@
     <section class="about-hr reveal" data-delay="240">
       <div class="about__block-image">
         <img
-          src="images/Photo_2.jpg"
+          src="images/Owners_photo/DSC06326.png"
           alt="Портрет HR-специалиста"
           loading="lazy"
           class="about__image"
@@ -190,36 +230,42 @@
       </div>
       <div class="about-hr__block-text">
         <p class="about-hr__text">
-          HR для меня - это не просто подбор персонала. Это про людей, про их
-          потенциал, мечты и ценности. Я верю, что каждая компания - это в
-          первую очередь её команда.
+          HR для меня — это намного больше, чем просто подбор персонала. Это про
+          людей. Про их потенциал, характер, мечты и ценности. Я убеждена: любая
+          компания — это не только продукт, услуги или бизнес-процессы. В первую
+          очередь это команда людей, которые каждый день вкладывают свои силы,
+          знания и энергию в общее дело.
         </p>
         <div class="about-hr__more">
-        <p class="about-hr__text">
-          Сегодня многие работодатели сталкиваются с тем, что сотрудники уходят
-          слишком быстро, не всегда вовлекаются в процесс и теряют мотивацию. Я
-          считаю, что причина кроется в отсутствии внимания к человеческому
-          фактору. Люди хотят работать там, где их уважают, где они могут расти
-          и чувствовать, что их труд имеет ценность.
-        </p>
-        <p class="about-hr__text">
-          Моя задача как HR - помогать компаниям находить именно таких
-          сотрудников и создавать условия, в которых они остаются и развиваются.
-          Я соединяю интересы бизнеса и интересы людей, чтобы выигрывали обе
-          стороны: работодатель получает лояльную и вовлечённую команду, а
-          сотрудник - возможность реализовать себя.
-        </p>
-        <p class="about-hr__text">
-          Для меня HR - это про доверие, честность и заботу. Ведь счастливые
-          сотрудники = успешный бизнес.
-        </p>
+          <p class="about-hr__text">
+            Сегодня многие работодатели сталкиваются с одной и той же проблемой:
+            сотрудники быстро уходят, не вовлекаются в процессы, теряют интерес
+            и мотивацию. Но чаще всего причина кроется не в людях — она в
+            отсутствии системного внимания к человеческому фактору. Люди хотят
+            работать там, где их слышат и уважают. Где их развитие поддерживают,
+            а вклад действительно ценят. Именно поэтому моя миссия в HR —
+            помогать компаниям находить не просто сотрудников, а “своих” людей.
+            Тех, кто разделяет ценности бизнеса, готов расти вместе с компанией
+            и строить долгосрочные отношения.
+          </p>
+          <p class="about-hr__text">
+            Я выстраиваю HR-процессы так, чтобы выигрывали обе стороны: бизнес
+            получает сильную, вовлечённую и лояльную команду, а сотрудники —
+            понятную систему развития, поддержку и возможность реализовать свой
+            потенциал.
+          </p>
+          <p class="about-hr__text">
+            Для меня HR — это про доверие, честность и уважение к людям. Потому
+            что я искренне верю: сильная команда создаёт сильный бизнес, а
+            счастливые сотрудники делают компанию по-настоящему успешной.
+          </p>
         </div>
         <button class="about-hr__toggle" type="button">Читать дальше</button>
       </div>
     </section>
 
     <!-- PROBLEMS Какие проблемы решаю-->
-    <section class="problems" data-delay="240">
+    <section class="problems reveal" data-delay="240">
       <h2 class="standard-block-parametr__title">Какие проблемы решаю?</h2>
       <div class="block__about-problems">
         <div class="problems__block">
@@ -308,100 +354,193 @@
 
     <!-- FOUNDER Карточка основателя компании-->
     <section class="section__founder reveal" data-delay="120">
-      <div class="founder__img">
-        <img
-          src="images/Photo_3.png"
-          alt="Фотография основателя компании, на столе карточки кандидатов, карты таро и кот на руках."
-          class="founder-img__img"
-          loading="lazy"
-        />
-      </div>
-      <div class="founder__block-text">
-        <div class="founder__block-about">
-          <p class="founder__about-name">Маргарита К. — основатель компании</p>
-          <p class="founder__text">
-            “Мы верим, что люди - не ресурс, а капитал. Наша задача - раскрывать
-            таланты, превращать потенциал в результат и создавать команды,
-            которые приносят бизнесу устойчивость и развитие”.
-          </p>
+      <div class="founder__card">
+        <div class="founder__img">
+          <img
+            src="images/Owners_photo/DSC06429.png"
+            alt="Фотография основателя компании"
+            class="founder-img__img card_1"
+            loading="lazy"
+          />
         </div>
-        <div class="founder__about-me">
-          <div class="founder__title">
-            <p class="founder__title-text">HR-менеджер с 3-летним опытом и современным подходом</p>
+        <div class="founder__block-text">
+          <div class="founder__block-about">
+            <p class="founder__about-name">
+              Маргарита Козлова — основатель компании
+            </p>
+            <p class="founder__text">
+              «Мы верим, что люди — не ресурс, а главный капитал бизнеса. Наша
+              задача — раскрывать таланты, превращать потенциал в результат и
+              создавать команды, которые обеспечивают компании устойчивость и
+              развитие»
+            </p>
+            <div class="founder__divider"></div>
+            <p class="founder__text-smole">
+              HR-специалист с современным системным подходом к работе с людьми и
+              бизнес-процессами. В своей работе Маргарита делает акцент не
+              только на подборе сотрудников, но и на построении целостной
+              HR-системы: от привлечения кандидатов до их долгосрочного развития
+              внутри компании.
+            </p>
           </div>
+        </div>
+      </div>
+      <div class="founder__card card-reverse">
+        <div class="founder__img">
+          <img
+            src="images/Owners_photo/DSC06303.png"
+            alt="Фотография основателя компании"
+            class="founder-img__img"
+            loading="lazy"
+          />
+        </div>
+        <div class="founder__block-text">
+          <div class="founder__block-about">
+          <div class="founder__title">
+            <p class="founder__title-text">
+              HR-менеджер с 3-летним опытом и современным подходом
+            </p>
+          </div>
+          <ul class="founder__link">
+            <li class="founder__list">подбор и оценка персонала</li>
+            <li class="founder__list">адаптация и сопровождение сотрудников</li>
+            <li class="founder__list">
+              разработка система обучения и развития
+            </li>
+            <li class="founder__list">
+              внедрение инструментов удержания и мотивации
+            </li>
+
+            <li class="founder__list">
+              выстраивание эффективной коммуникации между бизнесом и командой
+            </li>
+          </ul>
+          <h2 class="founder__subtitle-text">Образование</h2>
+
           <ul class="founder__link">
             <li class="founder__list">
               Два высших образования: гражданская авиация и юриспруденция.
             </li>
-            <li class="founder__list">Сертификат Skillbox “HR-менеджер с нуля” (2024).
-
-            </li>
             <li class="founder__list">
-              Практический опыт: подбор, адаптация, обучение, удержание и
-              сопровождение персонала.
-            </li>
-            <li class="founder__list">
-              Вне работы: книги, туризм, организация мероприятий — вдохновляют
-              на креативные решения и создание сильной корпоративной культуры.
+              Сертификат Skillbox “HR-менеджер с нуля” (2024).
             </li>
           </ul>
+          <div class="founder__divider"></div>
+          <p class="founder__text-smole">
+            Сочетание юридического мышления, системного подхода и HR-экспертизы
+            позволяет выстраивать процессы работы с персоналом грамотно,
+            прозрачно и эффективно для бизнеса.
+          </p>
+        </div>
+        
+      </div>
+</div>
+
+
+<div class="founder__card">
+        <div class="founder__img">
+          <img
+            src="images/Owners_photo/DSC06456.png"
+            alt="Фотография основателя компании"
+            class="founder-img__img card_1"
+            loading="lazy"
+          />
+        </div>
+        <div class="founder__block-text">
+          <div class="founder__block-about">
+            <p class="founder__about-name">
+              Личная философия в HR
+            </p>
+            <p class="founder__text">
+              Маргарита уверена, что сильная команда строится на доверии, уважении и понятных правилах взаимодействия. Именно такие команды способны развивать бизнес и достигать устойчивых результатов.
+            </p>
+            
+             <p class="founder__about-name text-indent">
+              Вне работы:
+            </p> 
+            <p class="founder__text">
+книги, путешествия и организация мероприятий. Эти увлечения помогают находить нестандартные решения, развивать креативность и создавать сильную корпоративную культуру внутри компаний.
+            </p>
+          </div>
         </div>
       </div>
+
+      
     </section>
 
     <!-- STATS Достижения-->
     <section id="about" class="stats reveal" data-delay="240">
       <article class="stats__block">
-        <img class="about__icon" src="images/about_icon/grownchart.png">
-        <img class=" about__icon--bg" src="images/about_icon/grownchart.png" alt="">
+        <img class="about__icon" src="images/about_icon/grownchart.png" />
+        <img
+          class="about__icon--bg"
+          src="images/about_icon/grownchart.png"
+          alt=""
+        />
         <p class="change-text">30+</p>
         <h2 class="stats__title-text">программ адаптации</h2>
         <p class="stats__text">
-          Сформировано  программ адаптации, которые помогли
-          снизить текучесть.
+          Сформировано программ адаптации, которые помогли снизить текучесть.
         </p>
       </article>
       <article class="stats__block">
-        <img class="about__icon about__experience" src="images/about_icon/experience.png">
-        <img class=" about__icon--bg" src="images/about_icon/experience.png" alt="">
+        <img
+          class="about__icon about__experience"
+          src="images/about_icon/experience.png"
+        />
+        <img
+          class="about__icon--bg"
+          src="images/about_icon/experience.png"
+          alt=""
+        />
         <p class="stats__text">
           опыт управления полным циклом HR-процессов в компаниях разного
           масштаба
         </p>
       </article>
       <article class="stats__block">
-        <img class="about__icon" src="images/about_icon/target.png">
-        <img class=" about__icon--bg" src="images/about_icon/target.png" alt="">
+        <img class="about__icon" src="images/about_icon/target.png" />
+        <img
+          class="about__icon--bg"
+          src="images/about_icon/target.png"
+          alt=""
+        />
         <p class="change-text">15+</p>
         <h2 class="stats__title-text">тренингов и мероприятий</h2>
         <p class="stats__text">
-          Организовано  тренингов и мероприятий, повысивших
-          вовлечённость персонала.
+          Организовано тренингов и мероприятий, повысивших вовлечённость
+          персонала.
         </p>
       </article>
       <article class="stats__block">
-        <img class="about__icon" src="images/about_icon/people.png">
-        <img class=" about__icon--bg" src="images/about_icon/people.png" alt="">
+        <img class="about__icon" src="images/about_icon/people.png" />
+        <img
+          class="about__icon--bg"
+          src="images/about_icon/people.png"
+          alt=""
+        />
         <p class="change-text">50+</p>
         <h2 class="stats__title-text">закрытых вакансий</h2>
         <p class="stats__text">
-         успешно закрытых вакансий от специалистов до
-          руководителей
+          успешно закрытых вакансий от специалистов до руководителей
         </p>
       </article>
       <article class="stats__block">
-        <img class="about__icon" src="images/about_icon/team.png">
-        <img class=" about__icon--bg" src="images/about_icon/team.png" alt="">
+        <img class="about__icon" src="images/about_icon/team.png" />
+        <img class="about__icon--bg" src="images/about_icon/team.png" alt="" />
         <p class="change-text">20+</p>
         <h2 class="stats__title-text">удержано сотрудников</h2>
         <p class="stats__text">
-          Удержано ключевых сотрудников, сохранивших
-          экспертизу компании.
+          Удержано ключевых сотрудников, сохранивших экспертизу компании.
         </p>
       </article>
       <article class="stats__block">
-        <img class="about__icon" src="images/about_icon/businessgrowth.png">
-        <img class=" about__icon--bg" src="images/about_icon/businessgrowth.png" alt="">
+        <img class="about__icon" src="images/about_icon/businessgrowth.png" />
+        <img
+          class="about__icon--bg"
+          src="images/about_icon/businessgrowth.png"
+          alt=""
+        />
         <p class="change-text">70+</p>
         <h2 class="stats__title-text">исполнителей</h2>
         <p class="stats__text">
@@ -413,75 +552,246 @@
     <!-- OFFER  Что предлагаю -->
     <section class="offer reveal" data-delay="120">
       <h2 class="standard-block-parametr__title">Что предлагаю</h2>
-      <p class="standard-block-parametr__heading">Больше, чем HR — создание человеческого капитала</p>
+      <p class="standard-block-parametr__heading">
+        Больше, чем HR — создание человеческого капитала
+      </p>
       <div class="line"></div>
       <div class="offer-container">
-        <svg class="offer-lines" viewBox="0 0 1200 700" preserveAspectRatio="none">
-    <line x1="630" y1="120" x2="720" y2="120" />
-    <line x1="570" y1="300" x2="650" y2="300" />
-    <line x1="460" y1="430" x2="690" y2="500" />
-    <line x1="440" y1="430" x2="750" y2="100" />
-    <line x1="330" y1="430" x2="430" y2="410" />
-  </svg>
+        <svg
+          class="offer-lines"
+          viewBox="0 0 1200 700"
+          preserveAspectRatio="none"
+        >
+          <line x1="630" y1="120" x2="720" y2="120" />
+          <line x1="570" y1="300" x2="650" y2="300" />
+          <line x1="460" y1="430" x2="690" y2="500" />
+          <line x1="440" y1="430" x2="750" y2="100" />
+          <line x1="330" y1="430" x2="430" y2="410" />
+        </svg>
         <article class="offer-container__card offer-container__1">
-          <img src="images/offer_icon/personal.png" class="offer_icon">
+          <img src="images/offer_icon/personal.png" class="offer_icon" />
           <div>
-          <h3 class="offer-container__title">Персонализированный подход</h3>
-          <p class="offer-container__text">
-            Я не ограничиваюсь стандартным подбором резюме. Моя задача — найти
-            специалистов, которые подходят именно вашей компании: разделяют её
-            ценности, быстро адаптируются к культуре и способны решать конкретные задачи бизнеса.
-          </p>
+            <h3 class="offer-container__title">Персонализированный подход</h3>
+            <p class="offer-container__text">
+              Я не ограничиваюсь стандартным подбором резюме. Моя задача — найти
+              специалистов, которые подходят именно вашей компании: разделяют её
+              ценности, быстро адаптируются к культуре и способны решать
+              конкретные задачи бизнеса.
+            </p>
           </div>
         </article>
         <article class="offer-container__card offer-container__2">
-          <img src="images/offer_icon/savings.png" class="offer_icon">
+          <img src="images/offer_icon/savings.png" class="offer_icon" />
           <div>
-          <h3 class="offer-container__title">Экономия времени</h3>
-          <p class="offer-container__text">
-            Процесс подбора требует больших ресурсов. Беру эту задачу на себя, позволяя вам 
-            сконцентрироваться на развитии бизнеса.
-          </p>
+            <h3 class="offer-container__title">Экономия времени</h3>
+            <p class="offer-container__text">
+              Процесс подбора требует больших ресурсов. Беру эту задачу на себя,
+              позволяя вам сконцентрироваться на развитии бизнеса.
+            </p>
           </div>
         </article>
         <article class="offer-container__card offer-container__3">
-          <img src="images/offer_icon/result.png" class="offer_icon">
+          <img src="images/offer_icon/result.png" class="offer_icon" />
           <div>
-          <h3 class="offer-container__title">Долгосрочный результат</h3>
-          <p class="offer-container__text">
-            Моя цель — не просто закрыть вакансию, а создать систему,
-            которая удерживает сотрудников, предлагая мотивацию и развитие. 
-            Так ваш бизнес получает устойчивую пользу.
-          </p>
+            <h3 class="offer-container__title">Долгосрочный результат</h3>
+            <p class="offer-container__text">
+              Моя цель — не просто закрыть вакансию, а создать систему, которая
+              удерживает сотрудников, предлагая мотивацию и развитие. Так ваш
+              бизнес получает устойчивую пользу.
+            </p>
           </div>
         </article>
         <article class="offer-container__card offer-container__4">
-          <img src="images/offer_icon/flexibility.png" class="offer_icon">
+          <img src="images/offer_icon/flexibility.png" class="offer_icon" />
           <div>
-          <h3 class="offer-container__title">Гибкость</h3>
-          <p class="offer-container__text">
-            Адаптируюсь к разовому проекту или сопровождаю бизнес на постоянной основе. 
-            Могу выбрать найлучший формат работы в зависимости от ваших целей.
-          </p>
+            <h3 class="offer-container__title">Гибкость</h3>
+            <p class="offer-container__text">
+              Адаптируюсь к разовому проекту или сопровождаю бизнес на
+              постоянной основе. Могу выбрать найлучший формат работы в
+              зависимости от ваших целей.
+            </p>
           </div>
         </article>
         <article class="offer-container__card offer-container__5">
-          <img src="images/offer_icon/transparency.png" class="offer_icon">
+          <img src="images/offer_icon/transparency.png" class="offer_icon" />
           <div>
-          <h3 class="offer-container__title">Прозрачность</h3>
-          <p class="offer-container__text">
-            Каждый этап сопровождается отчетами: сколько кандитатов в работе, на каком этапе 
-            они находятся и какие методы подбора и развития используются
-          </p>
+            <h3 class="offer-container__title">Прозрачность</h3>
+            <p class="offer-container__text">
+              Каждый этап сопровождается отчетами: сколько кандитатов в работе,
+              на каком этапе они находятся и какие методы подбора и развития
+              используются
+            </p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- PACKAGES Пакеты услуг -->
+    <section class="packages reveal">
+      <div class="packages__container">
+        <div class="packages__head">
+          <h2 class="packages__title">Пакеты подбора персонала</h2>
+          <p class="packages__subtitle">
+            Найдём не просто сотрудника — а капитал для вашего бизнеса
+          </p>
+          <p class="packages__text">
+            Каждый сотрудник влияет на результат компании. Правильно подобранный
+            специалист усиливает команду, ускоряет развитие бизнеса и снижает
+            текучесть кадров.
+          </p>
+        </div>
+
+        <div class="packages__grid">
+          <!-- Карточка 1 -->
+          <article class="package-card">
+            <div class="package-card__topline"></div>
+
+            <div class="package-card__content">
+              <p class="package-card__label">Базовый пакет</p>
+              <h3 class="package-card__title">Старт команды</h3>
+              <p class="package-card__desc">
+                Базовый подбор кандидатов для компаний, которым нужен первичный
+                отбор сильных специалистов.
+              </p>
+
+              <div class="package-card__price">
+                <span class="package-card__price-number">20 000 ₽</span>
+                <span class="package-card__price-note">за вакансию</span>
+              </div>
+
+              <ul class="package-card__list">
+                <li>Обсуждение требований вакансии</li>
+                <li>Формирование профиля кандидата</li>
+                <li>Поиск кандидатов</li>
+                <li>Отбор резюме</li>
+                <li>Проведение первичных интервью</li>
+                <li>Оценка кандидатов</li>
+                <li>Передача резюме отобранных кандидатов</li>
+              </ul>
+            </div>
+
+            <div class="package-card__footer">
+              <p class="package-card__result">
+                <strong>Результат:</strong> список проверенных кандидатов,
+                готовых к собеседованию с руководителем.
+              </p>
+              <a href="#contact" class="package-card__button">Выбрать пакет</a>
+            </div>
+          </article>
+
+          <!-- Карточка 2 -->
+          <article class="package-card package-card--accent">
+            <div class="package-card__topline"></div>
+
+            <div class="package-card__content">
+              <p class="package-card__label">Оптимальный пакет</p>
+              <h3 class="package-card__title">Сильная команда</h3>
+              <p class="package-card__desc">
+                Полный цикл подбора сотрудника для компаний, которые хотят
+                доверить подбор специалиста профессионалу.
+              </p>
+
+              <div class="package-card__price">
+                <span class="package-card__price-number">35 000 ₽</span>
+                <span class="package-card__price-note">за вакансию</span>
+              </div>
+
+              <ul class="package-card__list">
+                <li>Обсуждение требований вакансии</li>
+                <li>Формирование профиля кандидата</li>
+                <li>Поиск и отбор кандидатов</li>
+                <li>Проведение первичных интервью</li>
+                <li>Передача резюме кандидатов</li>
+                <li>Обсуждение кандидатов с руководителем</li>
+                <li>Организация второго этапа интервью</li>
+                <li>Проведение тестового задания при необходимости</li>
+                <li>Сопровождение кандидата до подписания оффера</li>
+              </ul>
+            </div>
+
+            <div class="package-card__footer">
+              <p class="package-card__result">
+                <strong>Результат:</strong> сотрудник проходит все этапы отбора
+                и готов выйти на работу.
+              </p>
+              <a href="#contact" class="package-card__button">Выбрать пакет</a>
+            </div>
+          </article>
+
+          <!-- Карточка 3 -->
+          <article class="package-card package-card--featured">
+            <div class="package-card__badge">Рекомендуем</div>
+            <div class="package-card__topline"></div>
+
+            <div class="package-card__content">
+              <p class="package-card__label">Премиум пакет</p>
+              <h3 class="package-card__title">Капитал команды</h3>
+              <p class="package-card__desc">
+                Подбор и развитие человеческого капитала для компаний, которым
+                важен не только найм, но и результат сотрудника.
+              </p>
+
+              <div class="package-card__price">
+                <span class="package-card__price-number">60 000 ₽</span>
+                <span class="package-card__price-note">за вакансию</span>
+              </div>
+
+              <ul class="package-card__list">
+                <li>Полный цикл подбора кандидатов</li>
+                <li>Проведение всех этапов интервью</li>
+                <li>Сопровождение до выхода сотрудника</li>
+                <li>Разработка индивидуального плана адаптации</li>
+                <li>Сопровождение сотрудника в период адаптации</li>
+                <li>Помощь в выводе сотрудника на KPI за 3–6 месяцев</li>
+              </ul>
+
+              <div class="package-card__bonus">
+                <span class="package-card__bonus-icon">🎁</span>
+                <span>Бонус: кадровый внутренний аудит компании</span>
+              </div>
+            </div>
+
+            <div class="package-card__footer">
+              <p class="package-card__result">
+                <strong>Результат:</strong> сотрудник успешно интегрируется в
+                команду и начинает приносить результат.
+              </p>
+              <a href="#contact" class="package-card__button">Выбрать пакет</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="packages-audit">
+          <div class="packages-audit__left">
+            <p class="packages-audit__label">Дополнительная услуга</p>
+            <h3 class="packages-audit__title">Кадровый внутренний аудит</h3>
+            <p class="packages-audit__price">25 000 – 35 000 ₽</p>
+          </div>
+
+          <div class="packages-audit__right">
+            <ul class="packages-audit__list">
+              <li>Анализ коммуникации между отделами</li>
+              <li>Оценка корпоративной культуры</li>
+              <li>Интервью с сотрудниками</li>
+              <li>Анализ эмоционального климата</li>
+              <li>Выявление конфликтных зон</li>
+              <li>Рекомендации по развитию HR-процессов</li>
+            </ul>
+
+            <div class="packages-audit__free">
+              Бесплатно при выборе пакета <strong>«Капитал команды»</strong>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- EXPERIENCE Мой опыт-->
     <section class="experience reveal" data-delay="120">
       <h2 class="standard-block-parametr__title">Мой опыт</h2>
-      <p class="standard-block-parametr__heading">Мысли, наблюдения и ценности, которыми я живу</p>
+      <p class="standard-block-parametr__heading">
+        Мысли, наблюдения и ценности, которыми я живу
+      </p>
       <div class="experience-container">
         <blockquote class="experience-container__card experience-card__1">
           “Каждый раз, когда сотрудник увольняется не из-за денег, а из-за людей
@@ -489,367 +799,439 @@
           внутри...”
         </blockquote>
         <div class="experience__more">
-        <blockquote class="experience-container__card experience-card__2">
-          “HR - это не про контроль, это про поддержку. Там, где людям
-          комфортно, не нужно держать их жёсткими рамками...”
-        </blockquote>
-        <blockquote class="experience-container__card experience-card__3">
-          “Люди не выгорают от задач - они выгорают от ощущения, что их труд не
-          имеет смысла...”
-        </blockquote>
-        <blockquote class="experience-container__card experience-card__4">
-          “Настоящий HR - не между руководством и сотрудником. Он - мост, по
-          которому они идут навстрему друг другу...”
-        </blockquote>
-        <blockquote class="experience-container__card experience-card__5">
-          “Хороший HR не делает чудеса. Он просто видит в человеке потенциал
-          раньше, чем это делают другие...”
-        </blockquote>
-        <blockquote class="experience-container__card experience-card__6">
-          “Моя мысля...”
-        </blockquote>
-        <blockquote class="experience-container__card experience-card__7">
-          “Моя мысля...”
-        </blockquote>
+          <blockquote class="experience-container__card experience-card__2">
+            “HR - это не про контроль, это про поддержку. Там, где людям
+            комфортно, не нужно держать их жёсткими рамками...”
+          </blockquote>
+          <blockquote class="experience-container__card experience-card__3">
+            “Люди не выгорают от задач - они выгорают от ощущения, что их труд
+            не имеет смысла...”
+          </blockquote>
+          <blockquote class="experience-container__card experience-card__4">
+            “Настоящий HR - не между руководством и сотрудником. Он - мост, по
+            которому они идут навстрему друг другу...”
+          </blockquote>
+          <blockquote class="experience-container__card experience-card__5">
+            “Хороший HR не делает чудеса. Он просто видит в человеке потенциал
+            раньше, чем это делают другие...”
+          </blockquote>
+          <blockquote class="experience-container__card experience-card__6">
+            “Моя мысля...”
+          </blockquote>
+          <blockquote class="experience-container__card experience-card__7">
+            “Моя мысля...”
+          </blockquote>
         </div>
       </div>
       <button class="experience__toggle" type="button">
-    Показать ещё мысли
-  </button>
+        Показать ещё мысли
+      </button>
     </section>
 
     <!-- CONTACT FORM Оставить заявку-->
     <section id="request" class="contact__form reveal" data-delay="120">
-  <h2 class="contact-form__title">Оставьте заявку</h2>
-  <p class="standard-block-parametr__heading">
-    Заполните форму, и я свяжусь с вами для обсуждения деталей сотрудничества
-  </p>
+      <h2 class="contact-form__title">Оставьте заявку</h2>
+      <p class="standard-block-parametr__heading">
+        Заполните форму, и я свяжусь с вами для обсуждения деталей
+        сотрудничества
+      </p>
 
-  <form
-    class="form"
-    id="tgForm"
-  >
-  <!-- action="https://eo1tgqjbmzd73gk.m.pipedream.net"
+      <form class="form" id="tgForm">
+        <!-- action="https://eo1tgqjbmzd73gk.m.pipedream.net"
     method="POST" -->
-    <input name="name" type="text" placeholder="Ваше имя" required />
+        <input name="name" type="text" placeholder="Ваше имя" required />
 
-    <input name="company" type="text" placeholder="Название компании" />
-    <input name="position" type="text" placeholder="Ваша должность" />
+        <input name="company" type="text" placeholder="Название компании" />
+        <input name="position" type="text" placeholder="Ваша должность" />
 
-    <!-- honeypot (антиспам): оставь пустым, пользователь не видит -->
-    <input
-      type="text"
-      name="company_hidden"
-      style="position:absolute;left:-9999px"
-      tabindex="-1"
-      autocomplete="off"
-    />
+        <!-- honeypot (антиспам): оставь пустым, пользователь не видит -->
+        <input
+          type="text"
+          name="company_hidden"
+          style="position: absolute; left: -9999px"
+          tabindex="-1"
+          autocomplete="off"
+        />
 
-   <input
-  name="phone"
-  type="tel"
-  placeholder="Номер телефона"
-  inputmode="numeric"
-  maxlength="12"
-  autocomplete="tel"
-  pattern="^(\+7|7|8)\d{10}$"
-  required
-/>
+        <input
+          name="phone"
+          type="tel"
+          placeholder="Номер телефона"
+          inputmode="numeric"
+          maxlength="12"
+          autocomplete="tel"
+          pattern="^(\+7|7|8)\d{10}$"
+          required
+        />
 
+        <textarea
+          name="msg"
+          placeholder="Кратко опишите запрос"
+          class="comment-block"
+        ></textarea>
 
-    <textarea name="msg" placeholder="Кратко опишите запрос" class="comment-block"></textarea>
-
-    <!-- можно использовать в Pipedream, чтобы понимать источник -->
-    <input type="hidden" name="source" value="hr-site" />
-    <label class="form-consent">
-  <input
-  class="button-approval"
-  type="checkbox"
-  name="consent"
-  required
-  oninvalid="this.setCustomValidity('Необходимо дать согласие на обработку данных')"
-  onchange="this.setCustomValidity('')"
-/>
-  <span class="form-consent__text">
-    Я даю согласие на обработку персональных данных
-    в соответствии с
-    <a class="two-flooor__conf" href="/privacy.html">Политикой конфиденциальности</a>
-  </span>
-</label>
-    <button type="submit" class="contact-form_button">Оставить заявку</button>
-    <div id="formSuccess" class="form-success" aria-live="polite"></div>
-
-  </form>
-</section>
-
+        <!-- можно использовать в Pipedream, чтобы понимать источник -->
+        <input type="hidden" name="source" value="hr-site" />
+        <label class="form-consent">
+          <input
+            class="button-approval"
+            type="checkbox"
+            name="consent"
+            required
+            oninvalid="
+              this.setCustomValidity(
+                'Необходимо дать согласие на обработку данных',
+              )
+            "
+            onchange="this.setCustomValidity('')"
+          />
+          <span class="form-consent__text">
+            Я даю согласие на обработку персональных данных в соответствии с
+            <a class="two-flooor__conf" href="/privacy.html"
+              >Политикой конфиденциальности</a
+            >
+          </span>
+        </label>
+        <button type="submit" class="contact-form_button">
+          Оставить заявку
+        </button>
+        <div id="formSuccess" class="form-success" aria-live="polite"></div>
+      </form>
+    </section>
 
     <!-- FOOTER Первый этаж-->
     <footer class="footer">
       <div class="footer__one-floor">
-      <a class="site-a-cap__brand-footer" href="/" aria-label="На главную">
-        <img class="site-a-cap__logo" src="images/logo_hc_capital.png" loading="lazy" alt="логотип-страницы" width="75px" height="75px">
+        <a class="site-a-cap__brand-footer" href="/" aria-label="На главную">
+          <img
+            class="site-a-cap__logo"
+            src="images/logo_hc_capital.png"
+            loading="lazy"
+            alt="логотип-страницы"
+            width="75px"
+            height="75px"
+          />
           <div class="footer__brand">
-        <span class="site-a-cap__brand-title">Капитал талантов — HR-консалтинг и подбор персонала для бизнеса.</span>
-          <span class="site-a-cap__brand-tagline-footer"
-            >© 2025 Все права защищены</span
-          >
+            <span class="site-a-cap__brand-title"
+              >Капитал талантов — HR-консалтинг и подбор персонала для
+              бизнеса.</span
+            >
+            <span class="site-a-cap__brand-tagline-footer"
+              >© 2025 Все права защищены</span
+            >
           </div>
-      </a>
+        </a>
 
-      <div class="footer-contacts">
-        <strong  class="footer__group">Контакты:</strong>
-        <address class="footer-contacts__text">
-          Телефон:
-          <a class="site-a-cap_phone" href="tel:+7XXXXXXXXXX"
-            >+7 (XXX) XXX-XX-XX</a
-          >
-        </address>
-        <address class="footer-contacts__text">
-          Email:
-          <a class="site-a-cap__mail" href="mailto:hc-capital@mail.ru?subject=Вопрос&body=Здравствуйте">hc-capital@mail.ru</a>
-        </address>
-        <address class="footer-contacts__text">
-          Адрес:
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=г.+Симферополь,+ул.+Лабутева,+1"
-            target="_blank"
-            rel="noopener"
-            class="google_address"
-            >г. Симферополь, ул. Лабутева, 1</a
-          >
-        </address>
-      </div>
-
-      <div class="footer-social">
-        <p class="footer-group">Мы в соцсетях:</p>
-        <ul class="footer__socials">
-          <li>
+        <div class="footer-contacts">
+          <strong class="footer__group">Контакты:</strong>
+          <address class="footer-contacts__text">
+            Телефон:
+            <a class="site-a-cap_phone" href="tel:+7XXXXXXXXXX"
+              >+7 (XXX) XXX-XX-XX</a
+            >
+          </address>
+          <address class="footer-contacts__text">
+            Email:
             <a
-              class="socials__link"
-              href="#"
+              class="site-a-cap__mail"
+              href="mailto:hc-capital@mail.ru?subject=Вопрос&body=Здравствуйте"
+              >hc-capital@mail.ru</a
+            >
+          </address>
+          <address class="footer-contacts__text">
+            Адрес:
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=г.+Симферополь,+ул.+Лабутева,+1"
               target="_blank"
               rel="noopener"
-              aria-label="ВКонтакте"
+              class="google_address"
+              >г. Симферополь, ул. Лабутева, 1</a
             >
-              <!-- VK (встроенный SVG, не нужны отдельные файлы) -->
-              <svg viewBox="0 0 24 24" class="icon">
-                <path
-                  d="M22.54 6.42c.17-.54 0-.93-.8-.93h-2.64c-.67 0-.97.35-1.14.73 0 0-1.33 3.23-3.21 5.33-.61.6-.89.8-1.22.8-.17 0-.42-.2-.42-.74V6.42c0-.66-.19-.93-.73-.93H8.39c-.41 0-.66.3-.66.58 0 .62.93.77 1.02 2.53v3.82c0 .84-.15.99-.47.99-.89 0-3.06-3.24-4.35-6.94-.25-.71-.5-1-1.19-1H.84c-.75 0-.9.35-.9.73 0 .68.89 4.06 4.14 8.52 2.16 2.94 5.21 4.53 8 4.53 1.67 0 1.88-.38 1.88-1.02v-2.35c0-.74.16-.89.69-.89.39 0 1.07.2 2.64 1.74 1.8 1.8 2.1 2.61 3.12 2.61h2.64c.75 0 1.13-.38.91-1.13-.24-.75-1.1-1.84-2.24-3.12-.62-.72-1.56-1.5-1.85-1.89-.39-.5-.28-.72 0-1.16 0 0 3.28-4.62 3.62-6.2Z"
-                />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              class="socials__link"
-              href=" https://t.me/HC_Talents"
-              target="_blank"
-              rel="noopener"
-              aria-label="Telegram"
-            >
-              <!-- Telegram -->
-              <svg viewBox="0 0 24 24" class="icon">
-                <path
-                  d="M9.04 15.31 8.89 19c.4 0 .57-.17.78-.38l1.87-1.8 3.88 2.84c.71.39 1.22.18 1.41-.66l2.56-12.06c.23-1.07-.38-1.49-1.07-1.23L3.2 9.27c-1.03.4-1.01.97-.18 1.24l4.47 1.39 10.38-6.57c.49-.3.94-.13.57.17"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
+          </address>
+        </div>
+
+        <div class="footer-social">
+          <p class="footer-group">Мы в соцсетях:</p>
+          <ul class="footer__socials">
+            <li>
+              <a
+                class="socials__link"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                aria-label="ВКонтакте"
+              >
+                <!-- VK (встроенный SVG, не нужны отдельные файлы) -->
+                <svg viewBox="0 0 24 24" class="icon">
+                  <path
+                    d="M22.54 6.42c.17-.54 0-.93-.8-.93h-2.64c-.67 0-.97.35-1.14.73 0 0-1.33 3.23-3.21 5.33-.61.6-.89.8-1.22.8-.17 0-.42-.2-.42-.74V6.42c0-.66-.19-.93-.73-.93H8.39c-.41 0-.66.3-.66.58 0 .62.93.77 1.02 2.53v3.82c0 .84-.15.99-.47.99-.89 0-3.06-3.24-4.35-6.94-.25-.71-.5-1-1.19-1H.84c-.75 0-.9.35-.9.73 0 .68.89 4.06 4.14 8.52 2.16 2.94 5.21 4.53 8 4.53 1.67 0 1.88-.38 1.88-1.02v-2.35c0-.74.16-.89.69-.89.39 0 1.07.2 2.64 1.74 1.8 1.8 2.1 2.61 3.12 2.61h2.64c.75 0 1.13-.38.91-1.13-.24-.75-1.1-1.84-2.24-3.12-.62-.72-1.56-1.5-1.85-1.89-.39-.5-.28-.72 0-1.16 0 0 3.28-4.62 3.62-6.2Z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="socials__link"
+                href=" https://t.me/HC_Talents"
+                target="_blank"
+                rel="noopener"
+                aria-label="Telegram"
+              >
+                <!-- Telegram -->
+                <svg viewBox="0 0 24 24" class="icon">
+                  <path
+                    d="M9.04 15.31 8.89 19c.4 0 .57-.17.78-.38l1.87-1.8 3.88 2.84c.71.39 1.22.18 1.41-.66l2.56-12.06c.23-1.07-.38-1.49-1.07-1.23L3.2 9.27c-1.03.4-1.01.97-.18 1.24l4.47 1.39 10.38-6.57c.49-.3.94-.13.57.17"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="footer__two-floor two-floor">
-        <img class="nickname_developer" src="images/My_nickname.png"  alt="Имя разработчика">
+        <img
+          class="nickname_developer"
+          src="images/My_nickname.png"
+          alt="Имя разработчика"
+        />
         <div class="two-floor__block-about">
-        <p class="two-floor__text">© ГОД ИМЯ ОРГАНИЗАЦИИ.</p>
-        <p class="two-floor__text">Мы предоставляем услуги в сфере подбора персонала, HR-консалтинга и сопровождения работодателей.
-Отправляя данные через формы на сайте, вы даёте согласие на обработку персональных данных, файлов Cookies и иной пользовательской информации в соответствии с 
-          <a href="/privacy.html" class="two-flooor__conf" href="#">Политикой конфиденциальности</a>
-        </p>
+          <p class="two-floor__text">© ГОД ИМЯ ОРГАНИЗАЦИИ.</p>
+          <p class="two-floor__text">
+            Мы предоставляем услуги в сфере подбора персонала, HR-консалтинга и
+            сопровождения работодателей. Отправляя данные через формы на сайте,
+            вы даёте согласие на обработку персональных данных, файлов Cookies и
+            иной пользовательской информации в соответствии с
+            <a href="/privacy.html" class="two-flooor__conf" href="#"
+              >Политикой конфиденциальности</a
+            >
+          </p>
         </div>
       </div>
     </footer>
     <script>
-window.addEventListener("load", () => {
-  const form = document.getElementById("tgForm");
-  const successEl = document.getElementById("formSuccess");
+      window.addEventListener("load", () => {
+        const form = document.getElementById("tgForm");
+        const successEl = document.getElementById("formSuccess");
 
-  if (!form) return;
+        if (!form) return;
 
-  // Телефон: только цифры
-  const phone = document.querySelector('#tgForm input[name="phone"]');
-  if (phone) {
-    phone.addEventListener("input", (e) => {
-      e.target.value = e.target.value.replace(/\D/g, "");
-    });
-  }
+        // Телефон: только цифры
+        const phone = document.querySelector('#tgForm input[name="phone"]');
+        if (phone) {
+          phone.addEventListener("input", (e) => {
+            e.target.value = e.target.value.replace(/\D/g, "");
+          });
+        }
 
-  // Reveal-анимации
-  const io = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          const d = en.target.dataset.delay || 0;
-          en.target.style.transitionDelay = d + "ms";
-          en.target.classList.add("in");
-          obs.unobserve(en.target);
+        // Reveal-анимации
+        const io = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((en) => {
+              if (en.isIntersecting) {
+                const d = en.target.dataset.delay || 0;
+                en.target.style.transitionDelay = d + "ms";
+                en.target.classList.add("in");
+                obs.unobserve(en.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+        );
+        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+        // Бургер
+        const burger = document.getElementById("burger");
+        const menu = document.querySelector(".main-nav");
+
+        if (burger && menu) {
+          burger.addEventListener("click", () => {
+            burger.classList.toggle("active");
+            menu.classList.toggle("open");
+          });
+
+          document.querySelectorAll(".menu-has-sub").forEach((item) => {
+            const toggle = item.querySelector(".submenu-toggle");
+            if (!toggle) return;
+            toggle.addEventListener("click", (e) => {
+              e.preventDefault();
+              item.classList.toggle("active");
+            });
+          });
+        }
+
+        // About: читать дальше
+        const section = document.querySelector(".about-hr");
+        const toggle = document.querySelector(".about-hr__toggle");
+        const more = document.querySelector(".about-hr__more");
+
+        if (section && toggle && more) {
+          const mq = window.matchMedia("(max-width: 990px)");
+          const OPEN_CLASS = "about-hr--open";
+
+          function setState(isMobile) {
+            if (isMobile) {
+              section.classList.remove(OPEN_CLASS);
+              more.hidden = true;
+              toggle.style.display = "";
+              toggle.textContent = "Читать дальше";
+              toggle.setAttribute("aria-expanded", "false");
+            } else {
+              section.classList.add(OPEN_CLASS);
+              more.hidden = false;
+              toggle.style.display = "none";
+              toggle.setAttribute("aria-expanded", "true");
+            }
+          }
+
+          toggle.addEventListener("click", () => {
+            if (!mq.matches) return;
+            const isOpen = section.classList.toggle(OPEN_CLASS);
+            more.hidden = !isOpen;
+            toggle.textContent = isOpen ? "Свернуть" : "Читать дальше";
+            toggle.setAttribute("aria-expanded", String(isOpen));
+          });
+
+          setState(mq.matches);
+          mq.addEventListener?.("change", (e) => setState(e.matches));
+        }
+
+        // Experience
+        const experienceSection = document.querySelector(".experience");
+        const toggleBtn = document.querySelector(".experience__toggle");
+        if (experienceSection && toggleBtn) {
+          toggleBtn.addEventListener("click", () => {
+            const opened =
+              experienceSection.classList.toggle("experience--open");
+            toggleBtn.textContent = opened
+              ? "Скрыть мысли"
+              : "Показать ещё мысли";
+          });
+        }
+
+        // ====== ОТПРАВКА ФОРМЫ (ОДИН РАЗ) ======
+        form.addEventListener(
+          "submit",
+          async (e) => {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            const data = Object.fromEntries(new FormData(form).entries());
+
+            if (successEl) {
+              successEl.textContent = "Отправка...";
+              successEl.classList.add("is-visible");
+            }
+
+            try {
+              const res = await fetch(
+                "https://eo1tgqjbmzd73gk.m.pipedream.net",
+                {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(data),
+                },
+              );
+
+              if (!res.ok) throw new Error("HTTP " + res.status);
+
+              if (successEl) {
+                successEl.textContent = "Заявка отправлена";
+                setTimeout(() => {
+                  successEl.classList.remove("is-visible");
+                  successEl.textContent = "";
+                }, 2500);
+              }
+
+              form.reset();
+            } catch (err) {
+              console.error(err);
+              if (successEl) {
+                successEl.textContent = "Ошибка отправки";
+                setTimeout(() => {
+                  successEl.classList.remove("is-visible");
+                }, 3000);
+              }
+            }
+          },
+          true,
+        );
+
+        // === Скролл для блока какие проблемы === ///
+        const container = document.querySelector(".block__about-problems");
+
+        if (container) {
+          let isPaused = false;
+          const speed = 1;
+
+          container.addEventListener("mouseenter", () => {
+            isPaused = true;
+          });
+
+          container.addEventListener("mouseleave", () => {
+            isPaused = false;
+          });
+
+          container.addEventListener(
+            "wheel",
+            (e) => {
+              if (window.innerWidth < 992) return;
+              e.preventDefault();
+              container.scrollLeft += e.deltaY;
+            },
+            { passive: false },
+          );
+
+          function autoScroll() {
+            if (!isPaused) {
+              container.scrollLeft += speed;
+
+              if (
+                container.scrollLeft + container.clientWidth >=
+                container.scrollWidth
+              ) {
+                container.scrollLeft = 0;
+              }
+            }
+
+            requestAnimationFrame(autoScroll);
+          }
+
+          autoScroll();
         }
       });
-    },
-    { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
-  );
-  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-  // Бургер
-  const burger = document.getElementById("burger");
-  const menu = document.querySelector(".main-nav");
+      // === Печатание текста Люди не ресурс, люди - это капитал ==== ///
+      window.addEventListener("load", () => {
+        const line1 = "Люди не ресурс, люди";
+        const line2 = "— это капитал";
 
-  if (burger && menu) {
-    burger.addEventListener("click", () => {
-      burger.classList.toggle("active");
-      menu.classList.toggle("open");
-    });
+        const el1 = document.getElementById("heroLine1");
+        const el2 = document.getElementById("heroLine2");
 
-    document.querySelectorAll(".menu-has-sub").forEach((item) => {
-      const toggle = item.querySelector(".submenu-toggle");
-      if (!toggle) return;
-      toggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        item.classList.toggle("active");
+        let i = 0;
+
+        function typeLine1() {
+          if (i < line1.length) {
+            el1.textContent += line1[i];
+            i++;
+            setTimeout(typeLine1, 140);
+          } else {
+            typeLine2();
+          }
+        }
+
+        let j = 0;
+
+        function typeLine2() {
+          if (j < line2.length) {
+            el2.textContent += line2[j];
+            j++;
+            setTimeout(typeLine2, 140);
+          }
+        }
+
+        typeLine1();
       });
-    });
-  }
-
-  // About: читать дальше
-  const section = document.querySelector(".about-hr");
-  const toggle = document.querySelector(".about-hr__toggle");
-  const more = document.querySelector(".about-hr__more");
-
-  if (section && toggle && more) {
-    const mq = window.matchMedia("(max-width: 990px)");
-    const OPEN_CLASS = "about-hr--open";
-
-    function setState(isMobile) {
-      if (isMobile) {
-        section.classList.remove(OPEN_CLASS);
-        more.hidden = true;
-        toggle.style.display = "";
-        toggle.textContent = "Читать дальше";
-        toggle.setAttribute("aria-expanded", "false");
-      } else {
-        section.classList.add(OPEN_CLASS);
-        more.hidden = false;
-        toggle.style.display = "none";
-        toggle.setAttribute("aria-expanded", "true");
-      }
-    }
-
-    toggle.addEventListener("click", () => {
-      if (!mq.matches) return;
-      const isOpen = section.classList.toggle(OPEN_CLASS);
-      more.hidden = !isOpen;
-      toggle.textContent = isOpen ? "Свернуть" : "Читать дальше";
-      toggle.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    setState(mq.matches);
-    mq.addEventListener?.("change", (e) => setState(e.matches));
-  }
-
-  // Experience
-  const experienceSection = document.querySelector(".experience");
-  const toggleBtn = document.querySelector(".experience__toggle");
-  if (experienceSection && toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      const opened = experienceSection.classList.toggle("experience--open");
-      toggleBtn.textContent = opened ? "Скрыть мысли" : "Показать ещё мысли";
-    });
-  }
-
-  // ====== ОТПРАВКА ФОРМЫ (ОДИН РАЗ) ======
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    e.stopImmediatePropagation();
-
-    const data = Object.fromEntries(new FormData(form).entries());
-
-    if (successEl) {
-      successEl.textContent = "Отправка...";
-      successEl.classList.add("is-visible");
-    }
-
-    try {
-      const res = await fetch("https://eo1tgqjbmzd73gk.m.pipedream.net", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error("HTTP " + res.status);
-
-      if (successEl) {
-        successEl.textContent = "Заявка отправлена";
-        setTimeout(() => {
-          successEl.classList.remove("is-visible");
-          successEl.textContent = "";
-        }, 2500);
-      }
-
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      if (successEl) {
-        successEl.textContent = "Ошибка отправки";
-        setTimeout(() => {
-          successEl.classList.remove("is-visible");
-        }, 3000);
-      }
-    }
-  }, true);
-
-  // === Скролл для блока какие проблемы === ///
-  const container = document.querySelector(".block__about-problems");
-
-if (container) {
-  let isPaused = false;
-  const speed = 1;
-
-  container.addEventListener("mouseenter", () => {
-    isPaused = true;
-  });
-
-  container.addEventListener("mouseleave", () => {
-    isPaused = false;
-  });
-
-  container.addEventListener(
-    "wheel",
-    (e) => {
-      e.preventDefault();
-      container.scrollLeft += e.deltaY;
-    },
-    { passive: false }
-  );
-
-  function autoScroll() {
-    if (!isPaused) {
-      container.scrollLeft += speed;
-
-      if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-        container.scrollLeft = 0;
-      }
-    }
-
-    requestAnimationFrame(autoScroll);
-  }
-
-  autoScroll();
-}
-});
-
-</script>
-
-  
+    </script>
   </body>
-
 </html>
