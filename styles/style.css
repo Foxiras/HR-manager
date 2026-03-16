@@ -670,7 +670,7 @@ h5.services__subtitle {
 
 .founder-img__img {
   width: 100%;
-  height: auto;
+  min-height: 650px;
   display: block;
   object-fit: cover;
 }
@@ -748,6 +748,7 @@ h5.services__subtitle {
 }
 
 .founder__title-text {
+  font-size: var(--fs-h2);
   color: var(--color-accent);
   font-weight: 600;
 }
@@ -769,7 +770,6 @@ ul li::marker {
   padding-top: 3%;
   color: var(--color-dark);
   font-family: var(--font-main);
-  width: max-content;
 }
 
 .stats {
@@ -1788,6 +1788,7 @@ ul li::marker {
 
 .founder__list {
   padding-top: 1%;
+  width: max-content;
 }
 
 .footer {
