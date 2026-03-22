@@ -689,9 +689,9 @@
             с руководителем.
           </div>
 
-          <button class="package-card__button" type="button">
-            Выбрать пакет
-          </button>
+          <a href="#request" class="package-card__button" data-package="Старт команды">
+  Выбрать пакет
+</a>
         </div>
       </article>
 
@@ -732,9 +732,9 @@
             выйти на работу.
           </div>
 
-          <button class="package-card__button" type="button">
-            Выбрать пакет
-          </button>
+          <a href="#request" class="package-card__button" data-package="Сильная команда">
+  Выбрать пакет
+</a>
         </div>
       </article>
 
@@ -784,10 +784,9 @@
             среде и начинает приносить результат.
           </div>
 
-          <button class="package-card__button" type="button">
-            Выбрать пакет
-          </button>
-        </div>
+          <a href="#request" class="package-card__button" data-package="Капитал команды">
+  Выбрать пакет
+</a>
       </article>
     </div>
 
@@ -911,6 +910,8 @@
     method="POST" -->
         <input name="name" type="text" placeholder="Ваше имя" required />
 
+        <input type="text" id="selectedPackage" placeholder="Выбранный пакет" readonly>
+
         <input name="company" type="text" placeholder="Название компании" />
         <input name="position" type="text" placeholder="Ваша должность" />
 
@@ -922,6 +923,8 @@
           tabindex="-1"
           autocomplete="off"
         />
+
+        
 
         <input
           name="phone"
@@ -1301,7 +1304,24 @@
         }
 
         typeLine1();
+
+        
       });
+
+
+// == Отправка выбранного пакета в форму == //
+      const buttons = document.querySelectorAll('.package-card__button');
+const packageInput = document.getElementById('selectedPackage');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const selected = btn.dataset.package;
+
+    if (packageInput) {
+      packageInput.value = selected;
+    }
+  });
+});
     </script>
   </body>
 </html>
