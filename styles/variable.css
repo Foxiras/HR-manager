@@ -8,7 +8,7 @@
   --color-accent: #4F3B22; /* темное золото, заголовки блоков */
   --color-dark: #000000;         /* глубокий чёрный */
   --color-light: #FFFFFF;        /* белый */
-  --color-active: rgb(112, 110, 105, 0.9);
+  --color-active: rgb(112, 110, 105, 0.9); /* серый */
 
   /* === Шрифты === */
   --font-main: 'Nunito Sans', sans-serif;     /* основной текст */
