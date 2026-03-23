@@ -914,7 +914,8 @@
     method="POST" -->
         <input name="name" type="text" placeholder="Ваше имя" required />
 
-        <input name="package" type="text" id="selectedPackage" placeholder="Выбранный пакет" readonly>
+        <input type="text" id="selectedPackageText" placeholder="Выбранный пакет" readonly>
+<input type="hidden" name="package" id="selectedPackage">
 
         <input name="company" type="text" placeholder="Название компании" />
         <input name="position" type="text" placeholder="Ваша должность" />
@@ -1086,233 +1087,234 @@
       </div>
     </footer>
     <script>
-      window.addEventListener("load", () => {
-        const form = document.getElementById("tgForm");
-        const successEl = document.getElementById("formSuccess");
+  window.addEventListener("load", () => {
+    const form = document.getElementById("tgForm");
+    const successEl = document.getElementById("formSuccess");
 
-        if (!form) return;
+    if (form) {
+      const phone = form.querySelector('input[name="phone"]');
+      const packageButtons = document.querySelectorAll(".package-card__button");
+      const packageText = document.getElementById("selectedPackageText");
+      const packageHidden = document.getElementById("selectedPackage");
 
-        // Телефон: только цифры
-        const phone = document.querySelector('#tgForm input[name="phone"]');
-        if (phone) {
-          phone.addEventListener("input", (e) => {
-            e.target.value = e.target.value.replace(/\D/g, "");
-          });
-        }
+      // Телефон: только цифры
+      if (phone) {
+        phone.addEventListener("input", (e) => {
+          e.target.value = e.target.value.replace(/\D/g, "");
+        });
+      }
 
-        // Reveal-анимации
-        const io = new IntersectionObserver(
-          (entries, obs) => {
-            entries.forEach((en) => {
-              if (en.isIntersecting) {
-                const d = en.target.dataset.delay || 0;
-                en.target.style.transitionDelay = d + "ms";
-                en.target.classList.add("in");
-                obs.unobserve(en.target);
-              }
-            });
-          },
-          { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
-        );
-        document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+      // Выбор пакета
+      packageButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const selected = this.dataset.package || "";
 
-        // Бургер
-        const burger = document.getElementById("burger");
-        const menu = document.querySelector(".main-nav");
+          if (packageText) packageText.value = selected;
+          if (packageHidden) packageHidden.value = selected;
+        });
+      });
 
-        if (burger && menu) {
-          burger.addEventListener("click", () => {
-            burger.classList.toggle("active");
-            menu.classList.toggle("open");
-          });
+      // Отправка формы
+      form.addEventListener(
+        "submit",
+        async (e) => {
+          e.preventDefault();
+          e.stopImmediatePropagation();
 
-          document.querySelectorAll(".menu-has-sub").forEach((item) => {
-            const toggle = item.querySelector(".submenu-toggle");
-            if (!toggle) return;
-            toggle.addEventListener("click", (e) => {
-              e.preventDefault();
-              item.classList.toggle("active");
-            });
-          });
-        }
+          const data = Object.fromEntries(new FormData(form).entries());
+          console.log("Данные формы:", data);
 
-        // About: читать дальше
-        const section = document.querySelector(".about-hr");
-        const toggle = document.querySelector(".about-hr__toggle");
-        const more = document.querySelector(".about-hr__more");
-
-        if (section && toggle && more) {
-          const mq = window.matchMedia("(max-width: 990px)");
-          const OPEN_CLASS = "about-hr--open";
-
-          function setState(isMobile) {
-            if (isMobile) {
-              section.classList.remove(OPEN_CLASS);
-              more.hidden = true;
-              toggle.style.display = "";
-              toggle.textContent = "Читать дальше";
-              toggle.setAttribute("aria-expanded", "false");
-            } else {
-              section.classList.add(OPEN_CLASS);
-              more.hidden = false;
-              toggle.style.display = "none";
-              toggle.setAttribute("aria-expanded", "true");
-            }
+          if (successEl) {
+            successEl.textContent = "Отправка...";
+            successEl.classList.add("is-visible");
           }
 
-          toggle.addEventListener("click", () => {
-            if (!mq.matches) return;
-            const isOpen = section.classList.toggle(OPEN_CLASS);
-            more.hidden = !isOpen;
-            toggle.textContent = isOpen ? "Свернуть" : "Читать дальше";
-            toggle.setAttribute("aria-expanded", String(isOpen));
-          });
+          try {
+            const res = await fetch("https://eo1tgqjbmzd73gk.m.pipedream.net", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
 
-          setState(mq.matches);
-          mq.addEventListener?.("change", (e) => setState(e.matches));
-        }
-
-        // ====== ОТПРАВКА ФОРМЫ (ОДИН РАЗ) ======
-        form.addEventListener(
-          "submit",
-          async (e) => {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-
-            const data = Object.fromEntries(new FormData(form).entries());
+            if (!res.ok) throw new Error("HTTP " + res.status);
 
             if (successEl) {
-              successEl.textContent = "Отправка...";
-              successEl.classList.add("is-visible");
+              successEl.textContent = "Заявка отправлена";
+              setTimeout(() => {
+                successEl.classList.remove("is-visible");
+                successEl.textContent = "";
+              }, 2500);
             }
 
-            try {
-              const res = await fetch(
-                "https://eo1tgqjbmzd73gk.m.pipedream.net",
-                {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify(data),
-                },
-              );
+            form.reset();
 
-              if (!res.ok) throw new Error("HTTP " + res.status);
+            if (packageText) packageText.value = "";
+            if (packageHidden) packageHidden.value = "";
+          } catch (err) {
+            console.error(err);
 
-              if (successEl) {
-                successEl.textContent = "Заявка отправлена";
-                setTimeout(() => {
-                  successEl.classList.remove("is-visible");
-                  successEl.textContent = "";
-                }, 2500);
-              }
-
-              form.reset();
-            } catch (err) {
-              console.error(err);
-              if (successEl) {
-                successEl.textContent = "Ошибка отправки";
-                setTimeout(() => {
-                  successEl.classList.remove("is-visible");
-                }, 3000);
-              }
+            if (successEl) {
+              successEl.textContent = "Ошибка отправки";
+              setTimeout(() => {
+                successEl.classList.remove("is-visible");
+                successEl.textContent = "";
+              }, 3000);
             }
-          },
-          true,
-        );
-
-        // === Скролл для блока какие проблемы === ///
-        const container = document.querySelector(".block__about-problems");
-
-        if (container) {
-          let isPaused = false;
-          const speed = 1;
-
-          container.addEventListener("mouseenter", () => {
-            isPaused = true;
-          });
-
-          container.addEventListener("mouseleave", () => {
-            isPaused = false;
-          });
-
-          container.addEventListener(
-            "wheel",
-            (e) => {
-              if (window.innerWidth < 992) return;
-              e.preventDefault();
-              container.scrollLeft += e.deltaY;
-            },
-            { passive: false },
-          );
-
-          function autoScroll() {
-            if (!isPaused) {
-              container.scrollLeft += speed;
-
-              if (
-                container.scrollLeft + container.clientWidth >=
-                container.scrollWidth
-              ) {
-                container.scrollLeft = 0;
-              }
-            }
-
-            requestAnimationFrame(autoScroll);
           }
+        },
+        true
+      );
+    }
 
-          autoScroll();
-        }
+    // Reveal-анимации
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) {
+            const d = en.target.dataset.delay || 0;
+            en.target.style.transitionDelay = d + "ms";
+            en.target.classList.add("in");
+            obs.unobserve(en.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // Бургер
+    const burger = document.getElementById("burger");
+    const menu = document.querySelector(".main-nav");
+
+    if (burger && menu) {
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        menu.classList.toggle("open");
       });
 
-      // === Печатание текста Люди не ресурс, люди - это капитал ==== ///
-      window.addEventListener("load", () => {
-        const line1 = "Люди не ресурс, люди";
-        const line2 = "— это капитал";
+      document.querySelectorAll(".menu-has-sub").forEach((item) => {
+        const toggle = item.querySelector(".submenu-toggle");
+        if (!toggle) return;
 
-        const el1 = document.getElementById("heroLine1");
-        const el2 = document.getElementById("heroLine2");
+        toggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          item.classList.toggle("active");
+        });
+      });
+    }
 
-        let i = 0;
+    // About: читать дальше
+    const section = document.querySelector(".about-hr");
+    const toggle = document.querySelector(".about-hr__toggle");
+    const more = document.querySelector(".about-hr__more");
 
-        function typeLine1() {
-          if (i < line1.length) {
-            el1.textContent += line1[i];
-            i++;
-            setTimeout(typeLine1, 140);
-          } else {
-            typeLine2();
-          }
+    if (section && toggle && more) {
+      const mq = window.matchMedia("(max-width: 990px)");
+      const OPEN_CLASS = "about-hr--open";
+
+      function setState(isMobile) {
+        if (isMobile) {
+          section.classList.remove(OPEN_CLASS);
+          more.hidden = true;
+          toggle.style.display = "";
+          toggle.textContent = "Читать дальше";
+          toggle.setAttribute("aria-expanded", "false");
+        } else {
+          section.classList.add(OPEN_CLASS);
+          more.hidden = false;
+          toggle.style.display = "none";
+          toggle.setAttribute("aria-expanded", "true");
         }
+      }
 
-        let j = 0;
+      toggle.addEventListener("click", () => {
+        if (!mq.matches) return;
 
-        function typeLine2() {
-          if (j < line2.length) {
-            el2.textContent += line2[j];
-            j++;
-            setTimeout(typeLine2, 140);
-          }
-        }
-
-        typeLine1();
-
-        
+        const isOpen = section.classList.toggle(OPEN_CLASS);
+        more.hidden = !isOpen;
+        toggle.textContent = isOpen ? "Свернуть" : "Читать дальше";
+        toggle.setAttribute("aria-expanded", String(isOpen));
       });
 
+      setState(mq.matches);
+      mq.addEventListener?.("change", (e) => setState(e.matches));
+    }
 
-// == Отправка выбранного пакета в форму == //
-      const buttons = document.querySelectorAll('.package-card__button');
-const packageInput = document.getElementById('selectedPackage');
+    // Скролл для блока "какие проблемы"
+    const container = document.querySelector(".block__about-problems");
 
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const selected = btn.dataset.package;
+    if (container) {
+      let isPaused = false;
+      const speed = 1;
 
-    if (packageInput) {
-      packageInput.value = selected;
+      container.addEventListener("mouseenter", () => {
+        isPaused = true;
+      });
+
+      container.addEventListener("mouseleave", () => {
+        isPaused = false;
+      });
+
+      container.addEventListener(
+        "wheel",
+        (e) => {
+          if (window.innerWidth < 992) return;
+          e.preventDefault();
+          container.scrollLeft += e.deltaY;
+        },
+        { passive: false }
+      );
+
+      function autoScroll() {
+        if (!isPaused) {
+          container.scrollLeft += speed;
+
+          if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+            container.scrollLeft = 0;
+          }
+        }
+
+        requestAnimationFrame(autoScroll);
+      }
+
+      autoScroll();
     }
   });
-});
-    </script>
+
+  // Печатание текста
+  window.addEventListener("load", () => {
+    const line1 = "Люди не ресурс, люди";
+    const line2 = "— это капитал";
+
+    const el1 = document.getElementById("heroLine1");
+    const el2 = document.getElementById("heroLine2");
+
+    if (!el1 || !el2) return;
+
+    let i = 0;
+    let j = 0;
+
+    function typeLine1() {
+      if (i < line1.length) {
+        el1.textContent += line1[i];
+        i++;
+        setTimeout(typeLine1, 140);
+      } else {
+        typeLine2();
+      }
+    }
+
+    function typeLine2() {
+      if (j < line2.length) {
+        el2.textContent += line2[j];
+        j++;
+        setTimeout(typeLine2, 140);
+      }
+    }
+
+    typeLine1();
+  });
+</script>
   </body>
 </html>
