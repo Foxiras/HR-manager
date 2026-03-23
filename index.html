@@ -905,12 +905,16 @@
         сотрудничества
       </p>
 
-      <form class="form" id="tgForm">
+      <form
+  class="form"
+  id="tgForm"
+  method="POST"
+>
         <!-- action="https://eo1tgqjbmzd73gk.m.pipedream.net"
     method="POST" -->
         <input name="name" type="text" placeholder="Ваше имя" required />
 
-        <input type="text" id="selectedPackage" placeholder="Выбранный пакет" readonly>
+        <input name="package" type="text" id="selectedPackage" placeholder="Выбранный пакет" readonly>
 
         <input name="company" type="text" placeholder="Название компании" />
         <input name="position" type="text" placeholder="Ваша должность" />
@@ -1166,19 +1170,6 @@
 
           setState(mq.matches);
           mq.addEventListener?.("change", (e) => setState(e.matches));
-        }
-
-        // Experience
-        const experienceSection = document.querySelector(".experience");
-        const toggleBtn = document.querySelector(".experience__toggle");
-        if (experienceSection && toggleBtn) {
-          toggleBtn.addEventListener("click", () => {
-            const opened =
-              experienceSection.classList.toggle("experience--open");
-            toggleBtn.textContent = opened
-              ? "Скрыть мысли"
-              : "Показать ещё мысли";
-          });
         }
 
         // ====== ОТПРАВКА ФОРМЫ (ОДИН РАЗ) ======
