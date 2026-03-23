@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Политика конфиденциальности</title>
+   <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HR — с заботой о Вас</title>
     <!-- Подключаем шрифты отдельным файлом -->
     <link rel="stylesheet" href="styles/global.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Подключаем основные стили -->
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/variable.css" />
 </head>
 <body class="page-privacy">
-<header class="site-a-cap" role="banner">
+<!-- HEADER -->
+    <header class="site-a-cap" role="banner">
       <a class="site-a-cap__brand" href="/" aria-label="На главную">
-        <img class="site-a-cap__logo" src="images/log_HC.svg" loading="lazy" alt="логотип-страницы">
+        <img
+          class="site-a-cap__logo"
+          src="images/logo_hc_capital.png"
+          loading="lazy"
+          alt="логотип-страницы"
+        />
+        <img
+          class="shadow-about__icon--bg"
+          src="images/logo_hc_capital.png"
+          alt=""
+        />
         <div class="site-a-cap__brand-text">
-          <span class="site-a-cap__brand-title">НС – Капитал талантов</span>
+          <span class="site-a-cap__brand-title"> Капитал талантов</span>
           <span class="site-a-cap__brand-tagline"
             >Ваш надёжный партнёр в подборе персонала</span
           >
@@ -28,185 +43,336 @@
           <ul id="mainmenu" class="menu">
             <li class="menu-list"><a href="#about">О нас</a></li>
             <li class="menu-list"><a href="#services">Услуги</a></li>
-            <li class="menu-list menu-has-sub"><a href="#contacts" class="submenu-toggle">Контакты</a>
-             <div class="submenu">
-          <p class="submenu__text">
-          Телефон:
-          <a href="tel:+7XXXXXXXXXX"
-            >+7 (XXX) XXX-XX-XX</a>
-        </p>
-        <address class="submenu__address submenu__text">
-          Email:
-          <a href="mailto:hc-capital@mail.ru?subject=Вопрос&body=Здравствуйте">hc-capital@mail.ru</a>
-        </address>
-        <address class="submenu__address submenu__text">
-          Адрес:
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=г.+Симферополь,+ул.+Лабутева,+1"
-            target="_blank"
-            rel="noopener"
-            class="google_address"
-            >г. Симферополь, ул. Лабутева, 1</a
-          >
-        </address>
-  </div>
-</li>
+            <li class="menu-list menu-has-sub">
+              <a href="#contacts" class="submenu-toggle">Контакты</a>
+              <div class="submenu">
+                <p class="submenu__text">
+                  Телефон:
+                  <a href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a>
+                </p>
+                <address class="submenu__address submenu__text">
+                  Email:
+                  <a
+                    href="mailto:hc-capital@mail.ru?subject=Вопрос&body=Здравствуйте"
+                    >hc-capital@mail.ru</a
+                  >
+                </address>
+                <address class="submenu__address submenu__text">
+                  Адрес:
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=г.+Симферополь,+ул.+Лабутева,+1"
+                    target="_blank"
+                    rel="noopener"
+                    class="google_address"
+                    >г. Симферополь, ул. Лабутева, 1</a
+                  >
+                </address>
+              </div>
+            </li>
             <li class="menu-list"><a href="#blog">Блог</a></li>
             <li class="menu-list"><a href="#media">СМИ</a></li>
           </ul>
         </nav>
-          <div class="main-menu">
-            <a class="site-a-cap_phone" href="tel:+7XXXXXXXXXX"
-              >+7 (XXX) XXX-XX-XX
-            </a>
-            <!-- Бургер-кнопка -->
-            <div class="burger" id="burger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <button
-              class="button-completion"
-              type="button"
-              onclick="document.querySelector('#request').scrollIntoView({behavior: 'smooth'});"
-            >
-              Оставить заявку
-            </button>
+        <div class="main-menu">
+          <a class="site-a-cap_phone" href="tel:+7XXXXXXXXXX"
+            >+7 (XXX) XXX-XX-XX
+          </a>
+          <!-- Бургер-кнопка -->
+          <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
+          <button
+            class="button-completion"
+            type="button"
+            onclick="
+              document
+                .querySelector('#request')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Оставить заявку
+          </button>
         </div>
+      </div>
     </header>
 
   <main>
-    <article class="content">
+  <article class="content">
+    <button class="back-button" onclick="goBack()">
+  ← Назад
+</button>
     <h1 class="main-title">Политика конфиденциальности</h1>
+
     <ol class="menu-list">
-    <li><h2 class="title"> Общие положения</h2>
-    <p class="text">Настоящая Политика конфиденциальности определяет порядок обработки и защиты
-персональных данных пользователей сайта, предоставляемых при использовании
-форм обратной связи и иных сервисов сайта.
-</p></li>
-<li><h2 class="title"> Какие данные собираются</h2>
-<p class="text">В рамках использования сайта могут обрабатываться следующие персональные данные:
-– имя;
-– номер телефона;
-– наименование компании;
-– должность;
-– текст сообщения;
-– иные данные, добровольно предоставленные пользователем;
-– технические данные (IP-адрес, cookies, данные браузера).
-</p></li>
-<li><h2 class="title"> Цели обработки</h2>
-<p class="text">Персональные данные обрабатываются в целях:
-– оказания HR-услуг и подбора персонала;
-– обратной связи с пользователем;
-– консультаций и деловой коммуникации;
-– улучшения качества работы сайта.
-</p></li>
-<li><h2 class="title"> Правовые основания</h2>
-<p class="text">Обработка персональных данных осуществляется на основании согласия пользователя,
-предоставляемого путём отправки данных через формы сайта.
-</p></li>
-<li><h2 class="title"> Хранение и передача данных</h2>
-<p class="text">Персональные данные не передаются третьим лицам, за исключением случаев,
-предусмотренных законодательством РФ, и хранятся в течение срока,
-необходимого для достижения целей обработки.
-</p></li>
-<li><h2 class="title"> Права пользователя</h2>
-<p class="text">Пользователь вправе запросить информацию о своих персональных данных,
-потребовать их уточнения или удаления, направив запрос через контактные данные сайта.
-</p></li>
-<li><h2 class="title"> Cookies</h2>
-<p class="text">Сайт использует файлы cookies для корректной работы и аналитики.
-Пользователь может отключить cookies в настройках браузера.
-</p></li>
-</ol>
-</article>
-  </main>
 
- <footer class="footer">
+      <li>
+        <h2 class="title"> Общие положения</h2>
+        <p class="text">
+          Настоящая политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта
+          <a href="https://www.hc-capital.ru/" target="_blank" class="page-privacy__link">https://www.hc-capital.ru/</a> (далее — Сайт).
+          Оператором персональных данных является:
+          Производственный кооператив «Семейные ценности» (ПК «Семейные ценности»), действующий в соответствии с законодательством Российской Федерации.
+          Сайт <a href="https://www.hc-capital.ru/" target="_blank" class="page-privacy__link">https://www.hc-capital.ru/</a> является отдельным интернет-ресурсом,
+          представляющим направление деятельности ПК «Семейные ценности».
+          Использование Сайта означает согласие пользователя с настоящей Политикой конфиденциальности и условиями обработки его персональных данных.
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title"> Персональные данные пользователей</h2>
+        <p class="text">
+          Оператор может обрабатывать следующие персональные данные:
+        </p>
+        <p class="text">
+          • Имя<br>
+          • Номер телефона<br>
+          • Адрес электронной почты (email)<br>
+          • Иные данные, предоставленные пользователем добровольно через формы на сайте
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title"> Цели обработки персональных данных</h2>
+        <p class="text">
+          Персональные данные пользователей обрабатываются в следующих целях:
+        </p>
+        <p class="text">
+          • Обработка входящих заявок<br>
+          • Связь с пользователем (консультация, уточнение информации)<br>
+          • Предоставление услуг<br>
+          • Направление коммерческих предложений<br>
+          • Улучшение качества работы сайта
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title">. Правовые основания обработки</h2>
+        <p class="text">
+          Оператор обрабатывает персональные данные пользователей на основании:
+        </p>
+        <p class="text">
+          • Федерального закона РФ №152-ФЗ «О персональных данных»<br>
+          • Согласия пользователя на обработку персональных данных
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title">. Порядок обработки и хранения данных</h2>
+        <p class="text">
+          Обработка персональных данных осуществляется с соблюдением принципов:
+        </p>
+        <p class="text">
+          • Законности и справедливости<br>
+          • Ограничения обработки конкретными целями<br>
+          • Недопущения избыточности данных
+        </p>
+        <p class="text">
+          Персональные данные хранятся не дольше, чем это требуется для целей обработки.
+          Оператор принимает все необходимые организационные и технические меры для защиты персональных данных от:
+        </p>
+        <p class="text">
+          • неправомерного доступа<br>
+          • изменения<br>
+          • раскрытия<br>
+          • уничтожения
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title"> Передача персональных данных третьим лицам</h2>
+        <p class="text">
+          Персональные данные могут передаваться третьим лицам только в следующих случаях:
+        </p>
+        <p class="text">
+          • если это необходимо для оказания услуг<br>
+          • если передача предусмотрена законодательством РФ<br>
+          • с согласия пользователя
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title"> Использование файлов cookie</h2>
+        <p class="text">
+          Сайт может использовать файлы cookie для:
+        </p>
+        <p class="text">
+          • корректной работы сайта<br>
+          • анализа поведения пользователей<br>
+          • улучшения пользовательского опыта
+        </p>
+        <p class="text">
+          Пользователь может отключить cookie в настройках браузера.
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title"> Права пользователя</h2>
+        <p class="text">
+          Пользователь имеет право:
+        </p>
+        <p class="text">
+          • Получать информацию о своих персональных данных<br>
+          • Требовать их уточнения, блокировки или удаления<br>
+          • Отозвать согласие на обработку персональных данных
+        </p>
+        <p class="text">
+          Для реализации своих прав пользователь может направить запрос на электронную почту Оператора.
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title"> Контактная информация</h2>
+        <p class="text">
+          Оператор персональных данных:<br>
+          ПК «Семейные ценности»<br>
+          Email: <a href="mailto:admin@family-values.net" class="page-privacy__link">admin@family-values.net</a><br>
+          Телефон: <a href="tel:+79890077736" class="page-privacy__link">+7 989 007 77 36</a><br>
+          Юридический адрес: 295048, Республика Крым, Симферополь, ул. Батурина, 143, 8
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title"> Заключительные положения</h2>
+        <p class="text">
+          Оператор вправе вносить изменения в настоящую Политику без согласия пользователя.
+          Актуальная версия Политики всегда доступна на Сайте.
+        </p>
+      </li>
+
+      <li>
+        <h2 class="title"> Согласие пользователя</h2>
+        <p class="text">
+          Отправляя данные через формы на сайте, пользователь подтверждает, что:
+        </p>
+        <p class="text">
+          • ознакомлен с настоящей Политикой<br>
+          • дает согласие на обработку своих персональных данных
+        </p>
+      </li>
+
+    </ol>
+  </article>
+</main>
+
+<!-- FOOTER Первый этаж-->
+    <footer class="footer">
       <div class="footer__one-floor">
-      <a class="site-a-cap__brand-footer" href="/" aria-label="На главную">
-        <img class="site-a-cap__logo" src="images/log_HC.svg" loading="lazy" alt="логотип-страницы" width="75px" height="75px">
+        <a class="site-a-cap__brand-footer" href="/" aria-label="На главную">
+          <img
+            class="site-a-cap__logo"
+            src="images/logo_hc_capital.png"
+            loading="lazy"
+            alt="логотип-страницы"
+            width="75px"
+            height="75px"
+          />
           <div class="footer__brand">
-        <span class="site-a-cap__brand-title">НС – с заботой о Вас</span>
-          <span class="site-a-cap__brand-tagline-footer"
-            >© 2025 Все права защищены</span
-          >
+            <span class="site-a-cap__brand-title"
+              >Капитал талантов — HR-консалтинг и подбор персонала для
+              бизнеса.</span
+            >
+            <span class="site-a-cap__brand-tagline-footer"
+              >© 2025 Все права защищены</span
+            >
           </div>
-      </a>
+        </a>
 
-      <div class="footer-contacts">
-        <strong  class="footer__group">Контакты:</strong>
-        <address class="footer-contacts__text">
-          Телефон:
-          <a class="site-a-cap_phone" href="tel:+7XXXXXXXXXX"
-            >+7 (XXX) XXX-XX-XX</a
-          >
-        </address>
-        <address class="footer-contacts__text">
-          Email:
-          <a class="site-a-cap__mail" href="mailto:hc-capital@mail.ru?subject=Вопрос&body=Здравствуйте">hc-capital@mail.ru</a>
-        </address>
-        <address class="footer-contacts__text">
-          Адрес:
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=г.+Симферополь,+ул.+Лабутева,+1"
-            target="_blank"
-            rel="noopener"
-            class="google_address"
-            >г. Симферополь, ул. Лабутева, 1</a
-          >
-        </address>
-      </div>
-
-      <div class="footer-social">
-        <p class="footer-group">Мы в соцсетях:</p>
-        <ul class="footer__socials">
-          <li>
+        <div class="footer-contacts">
+          <strong class="footer__group">Контакты:</strong>
+          <address class="footer-contacts__text">
+            Телефон:
+            <a class="site-a-cap_phone" href="tel:+7XXXXXXXXXX"
+              >+7 (XXX) XXX-XX-XX</a
+            >
+          </address>
+          <address class="footer-contacts__text">
+            Email:
             <a
-              class="socials__link"
-              href="#"
+              class="site-a-cap__mail"
+              href="mailto:hc-capital@mail.ru?subject=Вопрос&body=Здравствуйте"
+              >hc-capital@mail.ru</a
+            >
+          </address>
+          <address class="footer-contacts__text">
+            Адрес:
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=г.+Симферополь,+ул.+Лабутева,+1"
               target="_blank"
               rel="noopener"
-              aria-label="ВКонтакте"
+              class="google_address"
+              >г. Симферополь, ул. Лабутева, 1</a
             >
-              <!-- VK (встроенный SVG, не нужны отдельные файлы) -->
-              <svg viewBox="0 0 24 24" class="icon">
-                <path
-                  d="M22.54 6.42c.17-.54 0-.93-.8-.93h-2.64c-.67 0-.97.35-1.14.73 0 0-1.33 3.23-3.21 5.33-.61.6-.89.8-1.22.8-.17 0-.42-.2-.42-.74V6.42c0-.66-.19-.93-.73-.93H8.39c-.41 0-.66.3-.66.58 0 .62.93.77 1.02 2.53v3.82c0 .84-.15.99-.47.99-.89 0-3.06-3.24-4.35-6.94-.25-.71-.5-1-1.19-1H.84c-.75 0-.9.35-.9.73 0 .68.89 4.06 4.14 8.52 2.16 2.94 5.21 4.53 8 4.53 1.67 0 1.88-.38 1.88-1.02v-2.35c0-.74.16-.89.69-.89.39 0 1.07.2 2.64 1.74 1.8 1.8 2.1 2.61 3.12 2.61h2.64c.75 0 1.13-.38.91-1.13-.24-.75-1.1-1.84-2.24-3.12-.62-.72-1.56-1.5-1.85-1.89-.39-.5-.28-.72 0-1.16 0 0 3.28-4.62 3.62-6.2Z"
-                />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              class="socials__link"
-              href=" https://t.me/HC_Talents"
-              target="_blank"
-              rel="noopener"
-              aria-label="Telegram"
-            >
-              <!-- Telegram -->
-              <svg viewBox="0 0 24 24" class="icon">
-                <path
-                  d="M9.04 15.31 8.89 19c.4 0 .57-.17.78-.38l1.87-1.8 3.88 2.84c.71.39 1.22.18 1.41-.66l2.56-12.06c.23-1.07-.38-1.49-1.07-1.23L3.2 9.27c-1.03.4-1.01.97-.18 1.24l4.47 1.39 10.38-6.57c.49-.3.94-.13.57.17"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
+          </address>
+        </div>
+
+        <div class="footer-social">
+          <p class="footer-group">Мы в соцсетях:</p>
+          <ul class="footer__socials">
+            <li>
+              <a
+                class="socials__link"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                aria-label="ВКонтакте"
+              >
+                <!-- VK (встроенный SVG, не нужны отдельные файлы) -->
+                <svg viewBox="0 0 24 24" class="icon">
+                  <path
+                    d="M22.54 6.42c.17-.54 0-.93-.8-.93h-2.64c-.67 0-.97.35-1.14.73 0 0-1.33 3.23-3.21 5.33-.61.6-.89.8-1.22.8-.17 0-.42-.2-.42-.74V6.42c0-.66-.19-.93-.73-.93H8.39c-.41 0-.66.3-.66.58 0 .62.93.77 1.02 2.53v3.82c0 .84-.15.99-.47.99-.89 0-3.06-3.24-4.35-6.94-.25-.71-.5-1-1.19-1H.84c-.75 0-.9.35-.9.73 0 .68.89 4.06 4.14 8.52 2.16 2.94 5.21 4.53 8 4.53 1.67 0 1.88-.38 1.88-1.02v-2.35c0-.74.16-.89.69-.89.39 0 1.07.2 2.64 1.74 1.8 1.8 2.1 2.61 3.12 2.61h2.64c.75 0 1.13-.38.91-1.13-.24-.75-1.1-1.84-2.24-3.12-.62-.72-1.56-1.5-1.85-1.89-.39-.5-.28-.72 0-1.16 0 0 3.28-4.62 3.62-6.2Z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="socials__link"
+                href=" https://t.me/HC_Talents"
+                target="_blank"
+                rel="noopener"
+                aria-label="Telegram"
+              >
+                <!-- Telegram -->
+                <svg viewBox="0 0 24 24" class="icon">
+                  <path
+                    d="M9.04 15.31 8.89 19c.4 0 .57-.17.78-.38l1.87-1.8 3.88 2.84c.71.39 1.22.18 1.41-.66l2.56-12.06c.23-1.07-.38-1.49-1.07-1.23L3.2 9.27c-1.03.4-1.01.97-.18 1.24l4.47 1.39 10.38-6.57c.49-.3.94-.13.57.17"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="footer__two-floor two-floor">
-        <img class="nickname_developer" src="images/My_nickname.png"  alt="Имя разработчика">
+        <img
+          class="nickname_developer"
+          src="images/My_nickname.png"
+          alt="Имя разработчика"
+        />
         <div class="two-floor__block-about">
-        <p class="two-floor__text">© ГОД ИМЯ ОРГАНИЗАЦИИ.</p>
-        <p class="two-floor__text">Мы предоставляем услуги в сфере подбора персонала, HR-консалтинга и сопровождения работодателей.
-Отправляя данные через формы на сайте, вы даёте согласие на обработку персональных данных, файлов Cookies и иной пользовательской информации в соответствии с 
-          <a href="/privacy.html" target="_blank" class="two-flooor__conf" href="#">Политикой конфиденциальности</a>
-        </p>
+          <p class="two-floor__text">© ГОД ИМЯ ОРГАНИЗАЦИИ.</p>
+          <p class="two-floor__text">
+            Мы предоставляем услуги в сфере подбора персонала, HR-консалтинга и
+            сопровождения работодателей. Отправляя данные через формы на сайте,
+            вы даёте согласие на обработку персональных данных, файлов Cookies и
+            иной пользовательской информации в соответствии с
+            <a href="/privacy.html" class="two-flooor__conf" href="#"
+              >Политикой конфиденциальности</a
+            >
+          </p>
         </div>
       </div>
     </footer>
+    <script>
+      function goBack() {
+  if (document.referrer) {
+    history.back();
+  } else {
+    window.location.href = "/";
+  }
+}
+    </script>
 </body>
 </html>

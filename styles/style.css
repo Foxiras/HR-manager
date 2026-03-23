@@ -37,6 +37,10 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
+.page-privacy .site-a-cap {
+  z-index: 1000;
+}
+
 @property --snake-angle {
   syntax: "<angle>";
   inherits: false;
@@ -1347,8 +1351,9 @@ ul li::marker {
 .page-privacy .content {
   padding: 5%;
   color: rgb(56, 56, 55);
-  background: rgb(156, 155, 154, 0.4);
+  background: rgb(156, 155, 154, 0.2);
   font-family: var(--font-alt);
+  border-radius: 120px;
 }
 
 .page-privacy .main-title {
@@ -1364,6 +1369,38 @@ ul li::marker {
 .page-privacy li {
   margin-left: 7%;
 }
+
+.page-privacy .page-privacy__link {
+  text-decoration: none;
+  border: none;
+  color: var( --color-bg-accent);
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  background: var(--color-bg-accent);
+  color: var(--color-light);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  background: #1a3a86;
+}
+
+
+
+
+
+
+
 
 ol li::marker {
   font-size: 1.5em;
