@@ -1,41 +1,74 @@
 :root {
-  /* === Цвета === */
-  --color-bg-accent: #162C6E;   /* Темно-синий*/
-  --color-bg: rgb(252, 249, 240);           /* молочный фон у body*/
-  --color-bg-section: rgba(252, 247, 235);         /* фон у крупных блоков/секций */
-  --color-small-bg-section: rgba(43, 43, 43, 0.1); /* Фон у мелких блоков */
-  --color-block-header: rgb(199, 165, 171, 0.3); /* Фон у заголовка блоков, мелких */
-  --color-accent: #4F3B22; /* темное золото, заголовки блоков */
-  --color-dark: #000000;         /* глубокий чёрный */
-  --color-light: #FFFFFF;        /* белый */
-  --color-active: rgb(112, 110, 105, 0.9); /* серый */
+  /* ==============================
+     COLORS
+  ============================== */
 
-  /* === Шрифты === */
-  --font-main: 'Nunito Sans', sans-serif;     /* основной текст */
-  --font-title: 'Playfair Display', serif;    /* заголовки */
-  --font-alt: 'Inter', sans-serif;            /* тех. подписи / кнопки */
+  --color-bg: #f5f1e8;
+  --color-bg-section: #ebe5d8;
+  --color-bg-accent: #162c6e;
 
+  --color-dark: #111827;
+  --color-dark-soft: #202a3d;
 
-  --fs-body:  clamp(0.9375rem, 0.6vw + 0.85rem, 1.125rem); /* 15 -> 18 */
-  --fs-small: clamp(0.8125rem, 0.2vw + 0.75rem, 0.9375rem); /* 13 -> 15 */
-  --fs-lead:  clamp(1.0625rem, 0.8vw + 0.9rem, 1.5rem);     /* 17 -> 24 */
-  --fs-supersmall: clamp(12px, 1.2vw + 0.5rem, 15px); /* 12 - 15 */
-  --fs-h1:    clamp(1.5rem, 1.0254rem + 2.3729vw, 3.25rem);          /* 24 -> 52 */
-  --fs-h2:    clamp(1.25rem, 0.979rem + 1.1561vw, 1.875rem); /*  (20-30px) */;
-  --fs-h3:    clamp(1.25rem,  1.2vw + 0.95rem, 2.125rem);    /* 20 -> 34 */
-  --fs-h4:    clamp(1.125rem, 0.7vw + 0.95rem, 1.625rem);    /* 18 -> 26 */
+  --color-light: #ffffff;
 
-  --lh-body: 1.55;
-  --lh-head: 1.15;
-  
-  /* === Радиус скругления === */
-  --radius-sm: 40px;  /* У шапки */
-  --radius-md: 12px;  /* У мелких блоков*/
-  --outline-focus: 1px solid black;
-  --border-radius-focus: 9.375rem;
+  --color-accent: #b28a45;
+  --color-accent-light: #d7bb83;
 
-  /* === Тень === */
-  --shadow-soft: 2px 2px 4px rgba(0, 0, 0, 0.4);  /* Тень у заголовка крупных блоков*/
-  --shadow-strong: 10px 10px 20px rgba(0, 0, 0, 0.5);  /* Тень у мелких блоков */
-  --shadow-strong-internal: inset 5px 5px 20px rgba(0,0,0,1);
+  --color-muted: #687080;
+  --color-border: rgba(17, 24, 39, 0.12);
+
+  --color-success: #315c43;
+  --color-error: #9a3f3f;
+
+  /* ==============================
+     FONTS
+  ============================== */
+
+  --font-main: 'Nunito Sans', sans-serif;
+  --font-title: 'Playfair Display', serif;
+  --font-alt: 'Inter', sans-serif;
+
+  /* ==============================
+     FONT SIZES
+  ============================== */
+
+  --fs-body: clamp(0.95rem, 0.25vw + 0.88rem, 1.08rem);
+  --fs-small: clamp(0.78rem, 0.2vw + 0.72rem, 0.9rem);
+  --fs-lead: clamp(1.05rem, 0.8vw + 0.9rem, 1.5rem);
+
+  --fs-h1: clamp(2.8rem, 6vw, 6.8rem);
+  --fs-h2: clamp(2rem, 3.5vw, 4rem);
+  --fs-h3: clamp(1.2rem, 1.5vw, 1.7rem);
+  --fs-h4: clamp(1.05rem, 1vw, 1.3rem);
+
+  /* ==============================
+     LINE HEIGHT
+  ============================== */
+
+  --lh-body: 1.65;
+  --lh-head: 1.08;
+
+  /* ==============================
+     RADIUS
+  ============================== */
+
+  --radius-sm: 28px;
+  --radius-md: 18px;
+  --radius-lg: 36px;
+  --radius-pill: 999px;
+
+  /* ==============================
+     SHADOW
+  ============================== */
+
+  --shadow-soft: 0 10px 35px rgba(17, 24, 39, 0.08);
+  --shadow-card: 0 18px 50px rgba(17, 24, 39, 0.1);
+  --shadow-hover: 0 25px 70px rgba(17, 24, 39, 0.16);
+
+  /* ==============================
+     TRANSITIONS
+  ============================== */
+
+  --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
