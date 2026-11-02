@@ -52,7 +52,7 @@ def check():
             if not target.is_relative_to(PUBLIC.resolve()) or not target.is_file():
                 raise ValueError('Missing or escaping asset: ' + relative + ' -> ' + url)
     main = (PUBLIC / 'index.html').read_text(encoding='utf-8')
-    for fragment in ['action="/api/request.php"','name="message"','name="website"','name="consent" value="yes"','name="consent_version" value="2026-10-21"','assets/js/request-form.js']:
+    for fragment in ['action="/api/request.php"','name="message"','name="website"','name="consent" value="yes"','name="consent_version" value="2026-11-02"','assets/js/request-form.js']:
         if fragment not in main:
             raise ValueError('Form contract missing: ' + fragment)
     print('PASS: static assets, JavaScript syntax, form contract and absence of secret/test files')
