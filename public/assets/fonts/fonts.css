@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(a3a31d13fbcc3382.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(e05262d60a6f045b.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(8063f141c16ea1b0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(9fda2bd3b19064c5.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(54884abcec650287.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(14b6aebb899cbea9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(5276ae12340d0360.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(2ddbbcb0584d9c83.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(655ecee898b68ff3.ttf) format('truetype');
+}

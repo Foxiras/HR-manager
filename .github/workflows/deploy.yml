@@ -1,0 +1,37 @@
+name: РџСЂРѕРІРµСЂРєР° Рё РїСѓР±Р»РёРєР°С†РёСЏ РЅР° REG.RU
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hc-capital-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  site:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: РџРѕР»СѓС‡РёС‚СЊ РєРѕРґ
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: РџСЂРѕРІРµСЂРёС‚СЊ СЃР°Р№С‚
+        run: python3 scripts/check_site.py
+      - name: РџСЂРѕРІРµСЂРёС‚СЊ РѕРіСЂР°РЅРёС‡РµРЅРёСЏ РїСѓР±Р»РёРєР°С†РёРё
+        run: python3 -m unittest discover -s tests -v
+      - name: РЎРѕР±СЂР°С‚СЊ СЂРµР»РёР·
+        run: python3 scripts/build_archive.py "$GITHUB_SHA" outputs/release.tar.gz
+      - name: РћРїСѓР±Р»РёРєРѕРІР°С‚СЊ Рё РїСЂРѕРІРµСЂРёС‚СЊ СЃР°Р№С‚
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          DEPLOY_KEY: ${{ secrets.REGRU_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: server91.hosting.reg.ru ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHCWeKK5RkUMreIWIuMuhukWUxxEE8m+7gj8sdD7VCcM
+        run: python3 scripts/publish.py

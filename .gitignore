@@ -1,7 +1,14 @@
-config.php
+__pycache__/
+*.pyc
+outputs/
 .env
 .env.*
 !.env.example
+config.php
+*.pem
+*.key
+id_*
 *.log
-*.zip
+node_modules/
 .DS_Store
+Thumbs.db
